@@ -2,6 +2,7 @@
 #define BUW_BOX_HPP
 
 # include <glm/vec3.hpp>
+#include "shape.hpp"
 
 class Box : public Shape
 {
@@ -11,8 +12,8 @@ Box();
 Box(float a, float b, float c, float d, float e, float f);
 
 // getter
-glm::vec3 const& getMin()const;
-glm::vec3 const& getMax()const;
+glm::vec3 getMin()const;
+glm::vec3 getMax()const;
 
 float area() const override;
 float volume() const override;
