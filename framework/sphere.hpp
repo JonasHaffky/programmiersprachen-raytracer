@@ -6,11 +6,21 @@
 class Sphere : public Shape
 {
 public:
-virtual int area() const override;
-virtual int volume() const override;
+// Constructors
+Sphere();
+Sphere(float a, float b, float c, float rad);
+
+// getter
+glm::vec3 const& getMiddle()const;
+float getRadius()const;
+
+float area() const override;
+float volume() const override;
 
 private:
- 
+glm::vec3 middle_ ;
+float radius_;
+
 };
 
 #endif // define BUW_SPHERE_HPP
