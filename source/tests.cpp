@@ -1,8 +1,8 @@
 #define CATCH_CONFIG_RUNNER
 #include <catch.hpp>
-#include "shape.hpp"
-#include "sphere.hpp"
-#include "box.hpp"
+#include "shape.cpp"
+#include "sphere.cpp"
+#include "box.cpp"
 
 TEST_CASE("box constructor and getter","[box]")
 { Box a{};
