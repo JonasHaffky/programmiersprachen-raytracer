@@ -1,4 +1,5 @@
 #include "box.hpp"
+#include <cmath>
 
 // Constructors
 Box::Box():
@@ -22,7 +23,7 @@ float Box::area() const {
     float a = max_.x-min_.x;
     float b = max_.y-min_.y;
     float c = max_.z-min_.z;
-    return 2*(a*b+b*c+a*c);
+    return fabs(2*(a*b+b*c+a*c));
 }
 float Box::volume() const {
     float a = max_.x-min_.x;
