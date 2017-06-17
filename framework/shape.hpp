@@ -1,14 +1,25 @@
 #ifndef BUW_SHAPE_HPP
 #define BUW_SHAPE_HPP
+#include <string>
+#include "color.hpp"
+using namespace std;
 
-class Shape
-{
+class Shape {
 public:
-virtual float area() const = 0;
-virtual float volume() const = 0;
+
+	Shape();
+	Shape(string name);
+	Shape(string name, Color const& color);
+
+	virtual float area() = 0;
+	virtual float volume() = 0;
+
+	string getName() const;
+	Color getColor() const;
 
 protected:
- 
+	string name_;
+	Color color_;
 };
 
-#endif // define BUW_SHAPE_HPP
+#endif

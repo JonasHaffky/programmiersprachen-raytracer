@@ -1,33 +1,48 @@
-#include "box.hpp"
-#include <cmath>
+#include <box.hpp>
+#include <glm/vec3.hpp>
 
-// Constructors
-Box::Box():
-    min_{glm::vec3(-1,-1,-1)},
-    max_{glm::vec3(1,1,1)}
+Box::Box() {
+	min{glm::vec3{-1.0f,-1.0f,-1.0f}},
+    max{glm::vec3{1.0f,1.0f,1.0f}}
+}
+
+Box::Box(glm::vec3 const& minimum, glm::vec3 const& maximum):
+	min{minimum},
+	max{maximum}
+	{}
+
+Box::Box(glm::vec3 const& minimum, glm::vec3 const& maximum, string name) :
+	Shape{name},
+	min{minimum},
+	max{maximum}
 {}
-Box::Box(float a, float b, float c, float d, float e, float f):
-    min_{glm::vec3(a,b,c)},
-    max_{glm::vec3(d,e,f)}
-{}
 
-// getter
-glm::vec3 Box::getMin()const{
-    return min_;
-}
-glm::vec3 Box::getMax()const{
-    return max_;
+
+Box::Box(glm::vec3 const& minimum, glm::vec3 const& maximum, string name, Color color) :
+	Shape{name, color},
+	min{minimum},
+	max{maximum}
+	{}
+
+float Box::area()const {
+	float x = max.x - min.x;
+	float y = max.y - min.y;
+	float z = max.z - min.z;
+	return (2 * x*z) + (2 * y*z) + (2 * x*y);
 }
 
-float Box::area() const {
-    float a = max_.x-min_.x;
-    float b = max_.y-min_.y;
-    float c = max_.z-min_.z;
-    return fabs(2*(a*b+b*c+a*c));
+float Box :: volume()const {
+	float x = max.x - min.x;
+	float y = max.y - min.y;
+	float z = max.z - min.z;
+	
+	return x*y*z;
 }
-float Box::volume() const {
-    float a = max_.x-min_.x;
-    float b = max_.y-min_.y;
-    float c = max_.z-min_.z;
-    return a*b*c;
+
+glm::vec3 Box::getMin() const {
+	return min;
+}
+
+glm::vec3 Box::getMax() const {
+	return max;
 }

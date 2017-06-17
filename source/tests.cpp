@@ -1,56 +1,30 @@
 #define CATCH_CONFIG_RUNNER
 #include <catch.hpp>
-#include "shape.cpp"
-#include "sphere.cpp"
-#include "box.cpp"
+#include "sphere.hpp"
+#include "box.hpp"
+#include <glm/vec3.hpp>
+using namespace std;
 
-//5.2
-TEST_CASE("box constructor and getter","[box]")
-{ Box a{};
-  Box b{{4.2f},{2.1f},{6.2f},{3.1f},{4.2f},{5.1f}};
-  REQUIRE(a.getMin().x==-1.0f);
-  REQUIRE(a.getMin().y==-1.0f);
-  REQUIRE(a.getMin().z==-1.0f);
-  REQUIRE(a.getMax().x==1.0f);
-  REQUIRE(a.getMax().y==1.0f);
-  REQUIRE(a.getMax().z==1.0f);
-  REQUIRE(b.getMin().x==4.2f);
-  REQUIRE(b.getMin().y==2.1f);
-  REQUIRE(b.getMin().z==6.2f);
-  REQUIRE(b.getMax().x==3.1f);
-  REQUIRE(b.getMax().y==4.2f);
-  REQUIRE(b.getMax().z==5.1f);
-}
+glm::vec3 vectorA(1.5f, 2.3f, 3.4f);
 
-TEST_CASE("box area and volume","[box]")
-{ Box a{};
-  Box b{{4.2f},{2.1f},{6.2f},{3.1f},{4.2f},{5.1f}};
-  REQUIRE(a.area()==24.0f);
-  REQUIRE(a.volume()==8.0f);
-  REQUIRE(b.area()==Approx(6.82f).epsilon(0.001));
-  REQUIRE(a.volume()==8.0f);
-}
+//
+// 5.2 Tests
+TEST_CASE("Spheres and Boxes", "[constructors]") {
+	Sphere sp{};
+	Sphere sp2{vectorA, 5.6f};
+	
+	REQUIRE(sp.getRadius() == 0);
+	REQUIRE(sp2.getCenter().x == Approx(1.5f));
+	REQUIRE(sp2.area() == Approx(394.08f));
+	REQUIRE(sp2.volume() == Approx(735.62f));
 
-TEST_CASE("sphere constructor and getter","[sphere]")
-{ Sphere a{};
-  Sphere b{{4.2f},{2.1f},{6.2f},{3.1f}};
-  REQUIRE(a.getMiddle().x==1.0f);
-  REQUIRE(a.getMiddle().y==1.0f);
-  REQUIRE(a.getMiddle().z==1.0f);
-  REQUIRE(a.getRadius()==1.0f);
-  REQUIRE(b.getMiddle().x==4.2f);
-  REQUIRE(b.getMiddle().y==2.1f);
-  REQUIRE(b.getMiddle().z==6.2f);
-  REQUIRE(b.getRadius()==3.1f);
-}
+	Box bx{};
+	Box bx2{vectorA, { {2.5f}, {3.3f}, {4.4f} }};
 
-TEST_CASE("sphere area and volume","[sphere]")
-{ Sphere a{};
-  Sphere b{{4.2f},{2.1f},{6.2f},{3.1f}};
-  REQUIRE(a.area()==Approx(12.566f).epsilon(0.001));
-  REQUIRE(a.volume()==Approx(3.14f).epsilon(0.001));
-  REQUIRE(b.area()==Approx(120.76f).epsilon(0.001));
-  REQUIRE(a.volume()==Approx(3.14f).epsilon(0.001));
+	REQUIRE(bx.getMax().x == 0);
+	REQUIRE(bx2.getMin().y == Approx(2.3f));
+	REQUIRE(bx2.area() == Approx(6.0f));
+	REQUIRE(bx2.volume() == Approx(1.0f));
 }
 
 int main(int argc, char *argv[])

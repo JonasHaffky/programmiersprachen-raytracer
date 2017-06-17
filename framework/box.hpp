@@ -1,27 +1,25 @@
-#ifndef BUW_BOX_HPP
-#define BUW_BOX_HPP
+#ifndef BUW_SPHERE_HPP
+#define BUW_SPHERE_HP
 
-# include <glm/vec3.hpp>
-#include "shape.hpp"
+#include <shape.hpp>
+#include <glm/vec3.hpp>
 
-class Box : public Shape
-{
+class Box : public Shape {
 public:
-// Constructors
-Box();
-Box(float a, float b, float c, float d, float e, float f);
 
-// getter
-glm::vec3 getMin()const;
-glm::vec3 getMax()const;
+	Box();
+	Box(glm::vec3 const& minimum, glm::vec3 const& maximum);
+	Box(glm::vec3 const& minimum, glm::vec3 const& maximum, string name);
+	Box(glm::vec3 const& minimum, glm::vec3 const& maximum, string name, Color color);
 
-float area() const override;
-float volume() const override;
+	float area() const;
+	float volume()const;
+
+	glm::vec3 getMin() const;
+	glm::vec3 getMax() const;
 
 private:
-glm::vec3 min_ ;
-glm::vec3 max_ ;
-
+	glm::vec3 min;
+	glm::vec3 max;
 };
-
-#endif // define BUW_BOX_HPP
+#endif // !BUW_SPHERE_HPP

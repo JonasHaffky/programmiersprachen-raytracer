@@ -1,27 +1,44 @@
-#include "sphere.hpp"
+#define _USE_MATH_DEFINES
+#include <sphere.hpp>
 #include <cmath>
+#include <glm/vec3.hpp>
 
-// Constructors
-Sphere::Sphere():
-    middle_{glm::vec3(1,1,1)},
-    radius_{1}
-{}
-Sphere::Sphere(float a, float b, float c, float rad):
-    middle_{glm::vec3(a,b,c)},
-    radius_{rad}
+
+Sphere::Sphere(): 
+	center{glm::vec3{1.0f}},
+    radius{1.0f}
 {}
 
-// getter
-glm::vec3 Sphere::getMiddle()const{
-    return middle_;
-}
-float Sphere::getRadius()const{
-    return radius_;
+Sphere::Sphere(glm::vec3 const& centerP, float rad):
+	center {centerP},
+	radius {rad} 
+	{}
+
+Sphere::Sphere(glm::vec3 const& centerP, float rad, string name) :
+	Shape{ name },
+	center{ centerP },
+	radius{ rad }
+{}
+
+Sphere::Sphere(glm::vec3 const& centerP, float rad, string name, Color color) :
+	Shape{name, color},
+	center {centerP},
+	radius {rad}
+	{}
+
+float Sphere::area()const {
+	return (4 * M_PI*(radius*radius));
 }
 
-float Sphere::area() const {
-    return 4*M_PI*radius_*radius_;
+float Sphere::volume()const {
+	float c = 4.0f / 3.0f;
+	return (M_PI*(radius*radius*radius)*c);
 }
-float Sphere::volume() const {
-    return 4/3*M_PI*pow(radius_,3);
+
+glm::vec3 Sphere::getCenter() const {
+	return center;
+}
+
+float Sphere::getRadius() const {
+	return radius;
 }

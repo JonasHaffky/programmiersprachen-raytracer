@@ -1,27 +1,25 @@
 #ifndef BUW_SPHERE_HPP
-#define BUW_SPHERE_HPP
+#define BUW_SPHERE_HP
 
-# include <glm/vec3.hpp>
-#include "shape.hpp"
+#include <shape.hpp>
+#include <glm/vec3.hpp>
 
-class Sphere : public Shape
-{
+class Sphere : public Shape {
 public:
-// Constructors
-Sphere();
-Sphere(float a, float b, float c, float rad);
 
-// getter
-glm::vec3 getMiddle()const;
-float getRadius()const;
+	Sphere();
+	Sphere(glm::vec3 const& center, float radius);
+	Sphere(glm::vec3 const& center, float radius, string name);
+	Sphere(glm::vec3 const& center, float radius, string name, Color color);
 
-float area() const override;
-float volume() const override;
+	float area()const;
+	float volume()const;
+
+	glm::vec3 getCenter() const;
+	float getRadius() const;
 
 private:
-glm::vec3 middle_ ;
-float radius_;
-
+	glm::vec3 center;
+	float radius;
 };
-
-#endif // define BUW_SPHERE_HPP
+#endif // !BUW_SPHERE_HPP
