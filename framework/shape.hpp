@@ -1,25 +1,36 @@
-#ifndef BUW_SHAPE_HPP
-#define BUW_SHAPE_HPP
-#include <string>
+#ifndef SHAPE_HPP
+#define SHAPE_HPP
 #include "color.hpp"
-using namespace std;
+#include <glm/vec3.hpp>
+#include <cmath>
+#include <iostream>
+#include <string>
 
-class Shape {
+class Shape{
+
 public:
+//Constructor
+Shape();
+Shape(std::string const& name, Color const& color);
 
-	Shape();
-	Shape(string name);
-	Shape(string name, Color const& color);
+//pure virtual: muss man überschreiben
+virtual float area() const = 0;
+virtual float volume() const = 0;
 
-	virtual float area() = 0;
-	virtual float volume() = 0;
+//non-virtual: nicht überschreiben
+//getter
+std::string getName() const;
+Color getColor() const;
 
-	string getName() const;
-	Color getColor() const;
+//virtual: kann man überschreiben
+virtual std::ostream& print(std::ostream& os) const;
 
 protected:
-	string name_;
-	Color color_;
+//protected, damit die abgeleiteten Klassen darauf zugreifen können
+std::string name_;
+Color color_;
 };
 
-#endif
+std::ostream& operator<<(std::ostream& os, Shape const& s);
+
+#endif //SHAPE_HPP

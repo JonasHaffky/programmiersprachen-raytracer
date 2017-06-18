@@ -1,48 +1,50 @@
-#include <box.hpp>
-#include <glm/vec3.hpp>
+#include "box.hpp"
 
-Box::Box() {
-	min{glm::vec3{-1.0f,-1.0f,-1.0f}},
-    max{glm::vec3{1.0f,1.0f,1.0f}}
+//Konstruktoren
+Box::Box():
+  Shape{},
+  min_{-1},
+  max_{1}
+  {}
+
+Box::Box(glm::vec3 const& min, glm::vec3 const& max, std::string const& name, Color const& color):
+  Shape{name, color},
+  min_{min},
+  max_{max}{
+    min_.x = std::min(min.x, max.x);
+    min_.y = std::min(min.y, max.y);
+    min_.z = std::min(min.z, max.z);
+    max_.x = std::max(min.x, max.x);
+    max_.y = std::max(min.y, max.y);
+    max_.z = std::max(min.z, max.z);
+  }
+
+//getter
+glm::vec3 const& Box::getMin() const{
+  return min_;
 }
 
-Box::Box(glm::vec3 const& minimum, glm::vec3 const& maximum):
-	min{minimum},
-	max{maximum}
-	{}
-
-Box::Box(glm::vec3 const& minimum, glm::vec3 const& maximum, string name) :
-	Shape{name},
-	min{minimum},
-	max{maximum}
-{}
-
-
-Box::Box(glm::vec3 const& minimum, glm::vec3 const& maximum, string name, Color color) :
-	Shape{name, color},
-	min{minimum},
-	max{maximum}
-	{}
-
-float Box::area()const {
-	float x = max.x - min.x;
-	float y = max.y - min.y;
-	float z = max.z - min.z;
-	return (2 * x*z) + (2 * y*z) + (2 * x*y);
+glm::vec3 const& Box::getMax() const{
+  return max_;
 }
 
-float Box :: volume()const {
-	float x = max.x - min.x;
-	float y = max.y - min.y;
-	float z = max.z - min.z;
-	
-	return x*y*z;
+float Box::area() const{
+  //2*(a*b + b*c + a*c)
+  auto diff = max_ - min_;
+  return 2*((diff.x * diff.y) + (diff.y * diff.z) + (diff.x * diff.z));
 }
 
-glm::vec3 Box::getMin() const {
-	return min;
+float Box::volume() const{
+  //a*b*c
+  auto diff = max_ - min_;
+  return diff.x * diff.y * diff.z;
 }
 
-glm::vec3 Box::getMax() const {
-	return max;
+std::ostream& Box::print(std::ostream& os) const{
+  //printet erst den Shape-Teil (Name und Farbe)
+  Shape::print(os);
+  //danach werden die anderen Werte in os gespeichert und über << ausgegeben
+  os << "Min: " << "(" << min_.x << "," << min_.y << "," << min_.z << ")\n"
+  << "Max: " << "(" << max_.x << "," << max_.y << "," << max_.z << ")\n" << "\n" ;
+  return os;
 }

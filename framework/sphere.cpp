@@ -1,44 +1,38 @@
-#define _USE_MATH_DEFINES
-#include <sphere.hpp>
-#include <cmath>
-#include <glm/vec3.hpp>
+#include "sphere.hpp"
 
+Sphere::Sphere():
+  Shape{},
+  center_{0.0f, 0.0f, 0.0f},
+  radius_{1.0f}
+  {}
 
-Sphere::Sphere(): 
-	center{glm::vec3{1.0f}},
-    radius{1.0f}
-{}
+Sphere::Sphere(glm::vec3 const& center, float radius,
+              std::string const& name, Color const& color):
+  Shape{name, color},
+  center_{center},
+  radius_{radius}
+  {}
 
-Sphere::Sphere(glm::vec3 const& centerP, float rad):
-	center {centerP},
-	radius {rad} 
-	{}
-
-Sphere::Sphere(glm::vec3 const& centerP, float rad, string name) :
-	Shape{ name },
-	center{ centerP },
-	radius{ rad }
-{}
-
-Sphere::Sphere(glm::vec3 const& centerP, float rad, string name, Color color) :
-	Shape{name, color},
-	center {centerP},
-	radius {rad}
-	{}
-
-float Sphere::area()const {
-	return (4 * M_PI*(radius*radius));
+glm::vec3 const& Sphere::getCenter() const{
+  return center_;
 }
 
-float Sphere::volume()const {
-	float c = 4.0f / 3.0f;
-	return (M_PI*(radius*radius*radius)*c);
+float Sphere::getRadius() const{
+  return radius_;
 }
 
-glm::vec3 Sphere::getCenter() const {
-	return center;
+float Sphere::area() const{
+  return 4.0 * M_PI * radius_ * radius_;
 }
 
-float Sphere::getRadius() const {
-	return radius;
+float Sphere::volume() const{
+  return ((4.0 * M_PI * pow(radius_, 3.0))/3.0);
+}
+
+std::ostream& Sphere::print(std::ostream& os) const{
+  //erst Name und Color, dann das Sphere-spezifische
+  Shape::print(os);
+  os << "Center: " << "(" << center_.x << "," << center_.y << "," << center_.z << "),\n"
+  << "Radius: " << radius_ << "\n" << "\n";
+  return os;
 }

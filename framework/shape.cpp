@@ -1,23 +1,32 @@
-#include <shape.hpp>
+#include "shape.hpp"
 
-Shape::Shape() :
-	color_{Color(0, 0, 0)},
-	name_ {"default"}
-	{}
+Shape::Shape():
+  name_{"Default Shape"},
+  color_{1.0f, 1.0f, 1.0f}
+  {}
 
-Shape::Shape(string name) :
-	color_{Color(0, 0, 0)},
-	name_{ name }
-{}
+Shape::Shape(std::string const& name, Color const& color):
+  name_{name},
+  color_{color}
+  {}
 
-Shape::Shape(string name, Color const& color):
-	color_{color},
-	name_{name}
-	{}
+std::string Shape::getName() const{
+    return name_;
+  }
 
-string Shape::getName() const {
-	return name_;
-}
-Color Shape::getColor() const {
-	return color_;
+Color Shape::getColor() const{
+    return color_;
+  }
+
+std::ostream& Shape::print(std::ostream& os) const{
+    // << für color gibt es schon in color.hpp
+    // Name und color werden in os gepackt
+    os << "Name: " << name_ << " \nRGB: " << color_ ;
+    return os;
+  }
+
+std::ostream& operator<<(std::ostream& os, Shape const& s){
+    /*hier wird print aufgerufen, os per Referenz
+    wird in print(os) ja verändert*/
+    return s.print(os);
 }
