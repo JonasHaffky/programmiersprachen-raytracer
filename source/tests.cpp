@@ -97,6 +97,55 @@ TEST_CASE("Print Box", "[print]"){
   std::cout << box2;
 }
 
+//5.6
+TEST_CASE("intersectRaySphere", "[intersect]"){
+  // Ray
+  glm::vec3 ray_origin{0.0 ,0.0 ,0.0};
+  // ray direction has to be normalized!
+  // you can use:
+  // v = glm :: normalize (some_vector)
+  glm::vec3 ray_direction{0.0 ,0.0 ,1.0};
+  // Sphere
+  glm::vec3 sphere_center{0.0 ,0.0 ,5.0};
+  float sphere_radius{1.0};
+  float distance{0.0};
+  auto result = glm::intersectRaySphere(
+      ray_origin, ray_direction,
+      sphere_center,
+      sphere_radius * sphere_radius, // squared radius !!!
+      distance);
+  REQUIRE(distance == Approx(4.0f));
+}
+
+TEST_CASE("Sphere intersect", "[intersect]"){
+
+  glm::vec3 ray_origin{0.0 ,0.0 ,-2.0};
+  glm::vec3 ray_direction{0.0 ,0.0 ,2.5};
+
+  glm::vec3 sphere_center{0.0 ,0.0 ,4.0};
+  float sphere_radius{1.0};
+  float distance{0.0};
+
+  Ray ray{ray_origin, ray_direction};
+  Sphere sphere{sphere_center, sphere_radius, "Test Sphere", Color{1.0f, 1.0f, 1.0f}};
+
+  sphere.intersect(ray, distance);
+  REQUIRE(distance == Approx(5.0f));
+
+  glm::vec3 ray2_origin{0.0 ,8.0 ,-2.0};
+  glm::vec3 ray2_direction{0.0 ,0.0 ,-7.0};
+
+  glm::vec3 sphere2_center{-1.0 ,3.0 ,4.0};
+  float sphere2_radius{2.0};
+  float distance2{8.0};
+
+  Ray ray2{ray2_origin, ray2_direction};
+  Sphere sphere2{sphere2_center, sphere2_radius, "Beautiful Sphere", Color{1.0f, 1.0f, 1.0f}};
+
+  sphere.intersect(ray2, distance2);
+  REQUIRE(distance2 == Approx(8.0f));
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

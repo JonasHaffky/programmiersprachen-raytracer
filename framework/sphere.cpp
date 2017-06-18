@@ -36,3 +36,9 @@ std::ostream& Sphere::print(std::ostream& os) const{
   << "Radius: " << radius_ << "\n" << "\n";
   return os;
 }
+
+bool Sphere::intersect(Ray const& ray, float& distance) const{
+  //distance ist dann der Abstand vom ray.origin zum nächsten Punkt der Kugel
+  //bekommt nen Ray und ne "leere" distance, wird auf sphere aufgerufen
+  return glm::intersectRaySphere(ray.origin_, ray.direction_, center_, radius_*radius_, distance);
+}
