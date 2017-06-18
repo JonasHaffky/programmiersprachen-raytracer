@@ -14,6 +14,9 @@ public:
 Shape();
 Shape(std::string const& name, Color const& color);
 
+//Destructor
+virtual ~Shape();
+
 //pure virtual: muss man überschreiben
 virtual float area() const = 0;
 virtual float volume() const = 0;

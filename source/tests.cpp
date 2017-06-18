@@ -146,6 +146,41 @@ TEST_CASE("Sphere intersect", "[intersect]"){
   REQUIRE(distance2 == Approx(8.0f));
 }
 
+//5.8
+TEST_CASE("Destructor 1", "[Destructor]"){
+  std::cout << "---------------------------------------\n";
+  std::cout<< "Hier beginnt Aufgabe 5.8:" << std::endl;
+  std::cout<<"Box Objekt anlegen:" << std::endl;
+  Shape* s = new Box;
+  std::cout << "Box wieder loeschen:" << std::endl;
+  delete s;
+
+  std::cout << "---------------------------------------\n";
+  std::cout<<"Sphere Objekt anlegen:" << std::endl;
+  Shape* s2 = new Sphere;
+  std::cout << "Sphere wieder loeschen:" << std::endl;
+  delete s2;
+  std::cout << "---------------------------------------\n";
+}
+
+TEST_CASE("Destructor 2", "[5.8 Destructor]"){
+  std::cout << "---------------------------------------\n";
+  std::cout<< "5.8 Test 2:" << std::endl;
+  Color red{255, 0, 0};
+  glm::vec3 position{0};
+  std::cout<<"Sphere Objekt anlegen:" << std::endl;
+  Sphere* s1 = new Sphere{position,1.2,"sphere0",red};
+  std::cout<<"Noch ein Sphere Objekt anlegen:" << std::endl;
+  Shape* s2 = new Sphere{position,1.2,"sphere1",red};
+  s1->print(std::cout);
+  s2->print(std::cout);
+  std::cout << "Sphere 0 wieder loeschen:" << std::endl;
+  delete s1;
+  std::cout << "Sphere 1 auch wieder loeschen:" << std::endl;
+  delete s2;
+  std::cout << "---------------------------------------\n";
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

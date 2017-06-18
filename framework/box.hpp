@@ -12,6 +12,8 @@ public:
 	Box(glm::vec3 const& minimum, glm::vec3 const& maximum, std::string const& name);
 	Box(glm::vec3 const& minimum, glm::vec3 const& maximum, std::string const& name, Color const& color);
 
+	~Box();
+
 	float area() const;
 	float volume() const;
 

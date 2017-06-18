@@ -11,6 +11,9 @@ public:
 Sphere();
 Sphere(glm::vec3 const& center, float radius, std::string const& name, Color const& color);
 
+//Destructor
+~Sphere();
+
 //getter
 glm::vec3 const& getCenter() const;
 float getRadius() const;
