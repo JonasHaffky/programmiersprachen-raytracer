@@ -29,6 +29,8 @@ Color getColor() const;
 //virtual: kann man überschreiben
 virtual std::ostream& print(std::ostream& os) const;
 
+bool intersect (Ray const& ray, float& t ) = 0;
+
 protected:
 //protected, damit die abgeleiteten Klassen darauf zugreifen können
 std::string name_;
