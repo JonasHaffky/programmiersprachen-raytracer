@@ -8,13 +8,13 @@ struct Material{
 
 Material():
     name{},
-    ka{},
-    ks{},
-    kd{},
-    m{}
+    ka{0.0f,0.0f,0.0f},
+    ks{0.0f,0.0f,0.0f},
+    kd{0.0f,0.0f,0.0f},
+    m{0.0f}
     {}
 
-Material(std::string const& name, Color const& ka, Color const& kd, Color const& ks, float& m):
+Material(std::string const& name, Color const& ka, Color const& ks, Color const& kd, float m):
     name{name},
     ka{ka},
     ks{ks},
@@ -32,7 +32,7 @@ std::string name;
 Color ka;
 Color kd;
 Color ks;
-float m
+float m;
 
 };
 #endif //RAY_HPP

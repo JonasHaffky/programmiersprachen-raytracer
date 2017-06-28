@@ -9,7 +9,7 @@ class Sphere : public Shape{
 public:
 //Constructor
 Sphere();
-Sphere(glm::vec3 const& center, float radius, std::string const& name, Color const& color);
+Sphere(glm::vec3 const& center, float radius, std::string const& name, Material const& material);
 
 //Destructor
 ~Sphere();
@@ -23,7 +23,7 @@ float volume() const override;
 
 std::ostream& print(std::ostream& os) const override;
 
-bool intersect(Ray const& ray, float& distance) const;
+bool intersect(Ray const& ray, float& t) const override;
 
 private:
 glm::vec3 center_;

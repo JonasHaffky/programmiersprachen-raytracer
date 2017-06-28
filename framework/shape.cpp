@@ -2,13 +2,13 @@
 
 Shape::Shape():
   name_{"Default Shape"},
-  color_{1.0f, 1.0f, 1.0f}{
+  material_{}{
 	  std::cout << "Default Constructor Base class Shape\n";
 	}
 
-Shape::Shape(std::string const& name, Color const& color):
+Shape::Shape(std::string const& name, Material const& material):
   name_{name},
-  color_{color}{
+  material_{material}{
 	  std::cout << "Constructor Base class Shape\n";
   }
 
@@ -21,14 +21,14 @@ std::string Shape::getName() const{
     return name_;
   }
 
-Color Shape::getColor() const{
-    return color_;
+Material Shape::getMaterial() const{
+    return material_;
   }
 
 std::ostream& Shape::print(std::ostream& os) const{
     // << für color gibt es schon in color.hpp
     // Name und color werden in os gepackt
-    os << "Name: " << name_ << " \nRGB: " << color_ ;
+    os << "Name: " << name_ << " \nRGB: " << material_ ;
     return os;
   }
 

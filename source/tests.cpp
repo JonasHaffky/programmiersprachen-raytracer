@@ -6,6 +6,7 @@
 #include "sphere.hpp"
 #include "box.hpp"
 
+Material rot{"Rot", Color{1.0f,0.0f,0.0f}, Color{1.0f,0.0f,0.0f},Color{1.0f,0.0f,0.0f}, float{0.0f}};
 //5.2 bzw. 5.3
 //Konstruktoren Tests, implizieren getter
 TEST_CASE("Box Default Constructor", "[Box]"){
@@ -21,7 +22,7 @@ TEST_CASE("Box Default Constructor", "[Box]"){
 
 
 TEST_CASE("Box Constructor", "[Box]"){
-  Box box{glm::vec3{3,-6,0}, glm::vec3{8,1,2}, "Test Box", Color{1.0f, 1.0f, 1.0f}};
+  Box box{glm::vec3{3,-6,0}, glm::vec3{8,1,2}, "Test Box", rot};
   REQUIRE(box.getMin().x == 3);
   REQUIRE(box.getMin().y == -6);
   REQUIRE(box.getMin().z == -0);
@@ -41,15 +42,23 @@ TEST_CASE("Sphere Default Constructor", "[Sphere]"){
 }
 
 TEST_CASE("Sphere Constructor", "[Sphere]"){
-  Sphere sphere{glm::vec3{5,2,-3}, 9.0f, "Test Kugel", Color{1.0f, 1.0f, 1.0f}};
+  Sphere sphere{glm::vec3{5,2,-3}, 9.0f, "Test Kugel", rot};
   REQUIRE(sphere.getCenter().x == 5.0f);
   REQUIRE(sphere.getCenter().y == 2.0f);
   REQUIRE(sphere.getCenter().z ==-3.0f);
   REQUIRE(sphere.getRadius() == 9.0f);
   REQUIRE(sphere.getName() == "Test Kugel");
-  REQUIRE(sphere.getColor().r == 1.0f);
-  REQUIRE(sphere.getColor().g == 1.0f);
-  REQUIRE(sphere.getColor().b == 1.0f);
+  REQUIRE(sphere.getMaterial().name == "Rot");
+  REQUIRE(sphere.getMaterial().ka.r == 1.0f);
+  REQUIRE(sphere.getMaterial().ka.g == 0.0f);
+  REQUIRE(sphere.getMaterial().ka.b == 0.0f);
+  REQUIRE(sphere.getMaterial().ks.r == 1.0f);
+  REQUIRE(sphere.getMaterial().ks.g == 0.0f);
+  REQUIRE(sphere.getMaterial().ks.b == 0.0f);
+  REQUIRE(sphere.getMaterial().kd.r == 1.0f);
+  REQUIRE(sphere.getMaterial().kd.g == 0.0f);
+  REQUIRE(sphere.getMaterial().kd.b == 0.0f);
+  REQUIRE(sphere.getMaterial().m == 0.0f);
 
 }
 
@@ -57,7 +66,7 @@ TEST_CASE("Box Area", "[Box]"){
   Box box{};
   REQUIRE(box.area() == 24);
 
-  Box box2{glm::vec3{-1,-2,0}, glm::vec3{1,1,4}, "Test Box", Color{1.0f, 1.0f, 1.0f}};
+  Box box2{glm::vec3{-1,-2,0}, glm::vec3{1,1,4}, "Test Box", rot};
   REQUIRE(box2.area() == 52.0f);
 
 }
@@ -66,7 +75,7 @@ TEST_CASE("Box Volume", "[Box]"){
   Box box{};
   REQUIRE(box.volume() == 8);
 
-  Box box2{glm::vec3{-2,-4,0}, glm::vec3{2,2,8}, "Test Box", Color{1.0f, 1.0f, 1.0f}};
+  Box box2{glm::vec3{-2,-4,0}, glm::vec3{2,2,8}, "Test Box", rot};
   REQUIRE(box2.volume() == 192.0f);
 }
 
@@ -74,7 +83,7 @@ TEST_CASE("Sphere Area", "[Sphere]"){
   Sphere sphere{};
   REQUIRE(sphere.area() == Approx(12.56637f));
 
-  Sphere sphere2{glm::vec3{-1,2,0}, 5.0f, "Coole Kugel", Color{1.0f, 1.0f, 1.0f}};
+  Sphere sphere2{glm::vec3{-1,2,0}, 5.0f, "Coole Kugel", rot};
   REQUIRE(sphere2.area() == Approx(314.15926f));
 }
 
@@ -82,18 +91,18 @@ TEST_CASE("Sphere Volume", "[Sphere]"){
   Sphere sphere{};
   REQUIRE(sphere.volume() == Approx(4.18879f));
 
-  Sphere sphere2{glm::vec3{-1,2,0}, 5.0f, "Test Kugel", Color{1.0f, 1.0f, 1.0f}};
+  Sphere sphere2{glm::vec3{-1,2,0}, 5.0f, "Test Kugel", rot};
   REQUIRE(sphere2.volume() == Approx(523.59877f));
 }
 
 //5.5
 TEST_CASE("Print Sphere", "[print]"){
-  Sphere sphere2{glm::vec3{-5,2,3}, 4.0f, "Test Kugel", Color{1.0f, 1.0f, 1.0f}};
+  Sphere sphere2{glm::vec3{-5,2,3}, 4.0f, "Test Kugel", rot};
   std::cout << sphere2;
 }
 
 TEST_CASE("Print Box", "[print]"){
-  Box box2{glm::vec3{-8,5,0}, glm::vec3{6,8,4}, "Test Box", Color{1.0f, 1.0f, 1.0f}};
+  Box box2{glm::vec3{-8,5,0}, glm::vec3{6,8,4}, "Test Box", rot};
   std::cout << box2;
 }
 
@@ -127,7 +136,7 @@ TEST_CASE("Sphere intersect", "[intersect]"){
   float distance{0.0};
 
   Ray ray{ray_origin, ray_direction};
-  Sphere sphere{sphere_center, sphere_radius, "Test Sphere", Color{1.0f, 1.0f, 1.0f}};
+  Sphere sphere{sphere_center, sphere_radius, "Test Sphere", rot};
 
   sphere.intersect(ray, distance);
   REQUIRE(distance == Approx(5.0f));
@@ -140,7 +149,7 @@ TEST_CASE("Sphere intersect", "[intersect]"){
   float distance2{8.0};
 
   Ray ray2{ray2_origin, ray2_direction};
-  Sphere sphere2{sphere2_center, sphere2_radius, "Beautiful Sphere", Color{1.0f, 1.0f, 1.0f}};
+  Sphere sphere2{sphere2_center, sphere2_radius, "Beautiful Sphere", rot};
 
   sphere.intersect(ray2, distance2);
   REQUIRE(distance2 == Approx(8.0f));
@@ -166,12 +175,11 @@ TEST_CASE("Destructor 1", "[Destructor]"){
 TEST_CASE("Destructor 2", "[5.8 Destructor]"){
   std::cout << "---------------------------------------\n";
   std::cout<< "5.8 Test 2:" << std::endl;
-  Color red{255, 0, 0};
   glm::vec3 position{0};
   std::cout<<"Sphere Objekt anlegen:" << std::endl;
-  Sphere* s1 = new Sphere{position,1.2,"sphere0",red};
+  Sphere* s1 = new Sphere{position,1.2,"sphere0",rot};
   std::cout<<"Noch ein Sphere Objekt anlegen:" << std::endl;
-  Shape* s2 = new Sphere{position,1.2,"sphere1",red};
+  Shape* s2 = new Sphere{position,1.2,"sphere1",rot};
   s1->print(std::cout);
   s2->print(std::cout);
   std::cout << "Sphere 0 wieder loeschen:" << std::endl;

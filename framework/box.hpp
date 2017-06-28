@@ -10,7 +10,7 @@ public:
 	Box();
 	Box(glm::vec3 const& minimum, glm::vec3 const& maximum);
 	Box(glm::vec3 const& minimum, glm::vec3 const& maximum, std::string const& name);
-	Box(glm::vec3 const& minimum, glm::vec3 const& maximum, std::string const& name, Color const& color);
+	Box(glm::vec3 const& minimum, glm::vec3 const& maximum, std::string const& name, Material const& material);
 
 	~Box();
 
@@ -22,7 +22,7 @@ public:
 
 	std::ostream& print(std::ostream& os) const override;
 
-	bool intersect(Ray const& ray, float& distance) const;
+	bool intersect(Ray const& ray, float& t) const override;
 
 private:
 	glm::vec3 min_;

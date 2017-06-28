@@ -8,8 +8,8 @@ Box::Box():
 	  std::cout << "Default Constructor derived class Box\n";
   }
 
-Box::Box(glm::vec3 const& min, glm::vec3 const& max, std::string const& name, Color const& color):
-  Shape{name, color},
+Box::Box(glm::vec3 const& min, glm::vec3 const& max, std::string const& name, Material const& material):
+  Shape{name, material},
   min_{min},
   max_{max}{
 	min_.x = std::min(min.x, max.x);
@@ -55,6 +55,6 @@ std::ostream& Box::print(std::ostream& os) const{
   return os;
 }
 
-bool Box::intersect(Ray const& ray, float& distance) const{
-
+bool Box::intersect(Ray const& ray, float& t) const{
+  return true;
 }
