@@ -12,7 +12,7 @@ Box::Box(glm::vec3 const& min, glm::vec3 const& max, std::string const& name, Ma
   Shape{name, material},
   min_{min},
   max_{max}{
-	min_.x = std::min(min.x, max.x);
+	  min_.x = std::min(min.x, max.x);
     min_.y = std::min(min.y, max.y);
     min_.z = std::min(min.z, max.z);
     max_.x = std::max(min.x, max.x);
@@ -56,5 +56,40 @@ std::ostream& Box::print(std::ostream& os) const{
 }
 
 bool Box::intersect(Ray const& ray, float& t) const{
-  return true;
+  float tx1 = (min_.x - ray.origin_.x)/(ray.direction_.x);
+  float tx2 = (max_.x - ray.origin_.x)/(ray.direction_.x);
+
+  float ty1 = (min_.y - ray.origin_.y)/(ray.direction_.y);
+  float ty2 = (max_.y - ray.origin_.y)/(ray.direction_.y);
+
+  float tz1 = (min_.z - ray.origin_.z)/(ray.direction_.z);
+  float tz2 = (max_.z - ray.origin_.z)/(ray.direction_.z);
+
+  float tFX = std::max(tx1, tx2);
+  float tNX = std::min(tx1, tx2);
+
+  float tFY = std::max(ty1, ty2);
+  float tNY = std::min(ty1, ty2);
+
+  float tFZ = std::max(tz1, tz2);
+  float tNZ = std::min(tz1, tz2);
+
+  float tF = std::min(tFX, tFY);
+  float tN = std::max(tNX, tNY);
+
+  if(tF < tN){
+    t = std::abs(tF);
+    return false;
+  }
+
+  float tFar = std::min(tF, tFZ);
+  float tNear = std::max(tN, tNZ);
+
+  if((tFar < 0) || (tFar < tNear)){
+    t = std::abs(tFar);
+    return false;
+  }
+
+  t = std::abs(tNear);
+return true;
 }
