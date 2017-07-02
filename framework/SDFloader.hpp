@@ -10,7 +10,7 @@
 #include <vector>
 
 class SDFloader{
-  /*bekommt ein SDF-File übergeben,
+  /*bekommt einen file im SDF Format übergeben,
   *liest ihn ein und gibt eine Scene zurück
   */
 public:

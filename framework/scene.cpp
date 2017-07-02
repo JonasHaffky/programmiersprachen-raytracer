@@ -1,7 +1,7 @@
 #include "scene.hpp"
 
 Scene Scene::loadScene(std::string const& fileIn) const{
-  Scene thisScene;
+  Scene myScene;
 
   std::ifstream file;
   std::string line;
@@ -39,7 +39,7 @@ Scene Scene::loadScene(std::string const& fileIn) const{
 
           myScene.addMaterial(mat);
         }
-        //here you can add shapes or whatever
+        //add other keywords here e.g. shape, ...
       }
     }
     file.close();
@@ -52,16 +52,16 @@ Scene Scene::loadScene(std::string const& fileIn) const{
 }
 
 void Scene::addMaterial(Material const& mat){
-  auto sp = std::make_shared<Material>(mat);
-  materials_.push_back(sp);
-  std::cout<< sp->name_<<" wird gepusht.\n\n";
+  auto p = std::make_shared<Material>(mat);
+  materials_.push_back(p);
+  std::cout<< p->name_<<" wird gepusht.\n\n";
 }
 
 void Scene::printScene() const{
       std::cout<<"Materiealien der Szene:\n";
       for(const auto& i: materials_){
-        Material m{i->name_, i->ka_, i->kd_, i->ks_, i->m_};
-        std::cout<<m;
+        Material mp{i->name_, i->ka_, i->kd_, i->ks_, i->m_};
+        std::cout<<mp;
       }
-      //here print for rest of objects
+      //print other objects here
 }

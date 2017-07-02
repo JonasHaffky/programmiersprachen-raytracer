@@ -5,6 +5,7 @@
 #include "shape.hpp"
 #include "sphere.hpp"
 #include "box.hpp"
+#include "material.hpp"
 #include "SDFloader.hpp"
 #include "scene.hpp"
 
@@ -246,7 +247,7 @@ TEST_CASE("SDFloader Material", "[SDFloader]"){
   std::cout<<"Hier beginnt Aufgabe 6.5:\n";
 
   SDFloader l{};
-  l.loadMaterial("//hier der Dateipfad");
+  l.loadMaterial("/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/doc/material.txt");
 }
 
 TEST_CASE("Struct Scene", "[Scene]"){
@@ -254,7 +255,7 @@ TEST_CASE("Struct Scene", "[Scene]"){
   
   Scene testSzene{};
 
-  testSzene.loadScene("//hier der Dateipfad");
+  testSzene.loadScene("/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/doc/material.txt");
 }
 
 int main(int argc, char *argv[])

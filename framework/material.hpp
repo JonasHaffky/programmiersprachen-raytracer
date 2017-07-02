@@ -1,38 +1,43 @@
 #ifndef MATERIAL_HPP
 #define MATERIAL_HPP
 
-#include "color.hpp"
+#include <string>
 #include <iostream>
+#include "color.hpp"
 
 struct Material{
 
-Material():
-    name{},
-    ka{0.0f,0.0f,0.0f},
-    ks{0.0f,0.0f,0.0f},
-    kd{0.0f,0.0f,0.0f},
-    m{0.0f}
-    {}
+//Konstruktoren
+  Material():
+    name_{"Default Material"},
+    ka_{Color{}},
+    kd_{Color{}},
+    ks_{Color{}},
+    m_{0.0f}{}
 
-Material(std::string const& name, Color const& ka, Color const& ks, Color const& kd, float m):
-    name{name},
-    ka{ka},
-    ks{ks},
-    kd{kd},
-    m{m}
-    {}
+  Material(std::string name, Color a, Color d, Color s, float m):
+    name_{name},
+    ka_{a},
+    kd_{d},
+    ks_{s},
+    m_{m}{}
 
-friend std::ostream& operator<<(std::ostream& os, Material const& ma)
-  {
-    os << "(" << ma.name << "," << ma.ka << "," << ma.ks << "," << ma.kd << "," << ma.m << ")\n";
+
+  //friend, da es ja aus der Shape aufgerufen wird!
+  friend std::ostream& operator<<(std::ostream& os, Material const& mat){
+    os << "Materialname: " << mat.name_ << std::endl <<
+          "ka: " << mat.ka_ << std::endl<<
+          "kd: " << mat.kd_ <<std::endl<<
+          "ks: " << mat.ks_ << std::endl<<
+          "m: " << mat.m_ << std::endl;
     return os;
   }
 
-std::string name;
-Color ka;
-Color kd;
-Color ks;
-float m;
-
+//Member
+  std::string name_;
+  Color ka_;
+  Color kd_;
+  Color ks_;
+  float m_;
 };
-#endif //RAY_HPP
+#endif //MATERIAL_HPP
