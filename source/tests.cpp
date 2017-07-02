@@ -5,6 +5,8 @@
 #include "shape.hpp"
 #include "sphere.hpp"
 #include "box.hpp"
+#include "SDFloader.hpp"
+#include "scene.hpp"
 
 Material rot{"Rot", Color{1.0f,0.0f,0.0f}, Color{1.0f,0.0f,0.0f},Color{1.0f,0.0f,0.0f}, float{0.0f}};
 //5.2 bzw. 5.3
@@ -240,6 +242,20 @@ TEST_CASE("Ray doesn't intersect Box", "[6.3 intersect]"){
   REQUIRE(!box.intersect(ray, distance));
 }
 
+TEST_CASE("SDFloader Material", "[SDFloader]"){
+  std::cout<<"Hier beginnt Aufgabe 6.5:\n";
+
+  SDFloader l{};
+  l.loadMaterial("//hier der Dateipfad");
+}
+
+TEST_CASE("Struct Scene", "[Scene]"){
+  std::cout<<"Hier beginnt Aufgabe 6.6:\n";
+  
+  Scene testSzene{};
+
+  testSzene.loadScene("//hier der Dateipfad");
+}
 
 int main(int argc, char *argv[])
 {
