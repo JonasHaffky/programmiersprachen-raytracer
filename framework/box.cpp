@@ -78,18 +78,17 @@ bool Box::intersect(Ray const& ray, float& t) const{
   float tN = std::max(tNX, tNY);
 
   if(tF < tN){
-    t = std::abs(tF);
     return false;
   }
 
   float tFar = std::min(tF, tFZ);
   float tNear = std::max(tN, tNZ);
 
-  if((tFar < 0) || (tFar < tNear)){
-    t = std::abs(tFar);
+  if(tFar < tNear){
     return false;
   }
 
   t = std::abs(tNear);
-return true;
+  return true;
+
 }
