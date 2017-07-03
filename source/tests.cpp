@@ -51,17 +51,17 @@ TEST_CASE("Sphere Constructor", "[Sphere]"){
   REQUIRE(sphere.getCenter().z ==-3.0f);
   REQUIRE(sphere.getRadius() == 9.0f);
   REQUIRE(sphere.getName() == "Test Kugel");
-  REQUIRE(sphere.getMaterial().name == "Rot");
-  REQUIRE(sphere.getMaterial().ka.r == 1.0f);
-  REQUIRE(sphere.getMaterial().ka.g == 0.0f);
-  REQUIRE(sphere.getMaterial().ka.b == 0.0f);
-  REQUIRE(sphere.getMaterial().ks.r == 1.0f);
-  REQUIRE(sphere.getMaterial().ks.g == 0.0f);
-  REQUIRE(sphere.getMaterial().ks.b == 0.0f);
-  REQUIRE(sphere.getMaterial().kd.r == 1.0f);
-  REQUIRE(sphere.getMaterial().kd.g == 0.0f);
-  REQUIRE(sphere.getMaterial().kd.b == 0.0f);
-  REQUIRE(sphere.getMaterial().m == 0.0f);
+  REQUIRE(sphere.getMaterial().name_ == "Rot");
+  REQUIRE(sphere.getMaterial().ka_.r == 1.0f);
+  REQUIRE(sphere.getMaterial().ka_.g == 0.0f);
+  REQUIRE(sphere.getMaterial().ka_.b == 0.0f);
+  REQUIRE(sphere.getMaterial().ks_.r == 1.0f);
+  REQUIRE(sphere.getMaterial().ks_.g == 0.0f);
+  REQUIRE(sphere.getMaterial().ks_.b == 0.0f);
+  REQUIRE(sphere.getMaterial().kd_.r == 1.0f);
+  REQUIRE(sphere.getMaterial().kd_.g == 0.0f);
+  REQUIRE(sphere.getMaterial().kd_.b == 0.0f);
+  REQUIRE(sphere.getMaterial().m_ == 0.0f);
 
 }
 
