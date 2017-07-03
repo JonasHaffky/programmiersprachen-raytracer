@@ -199,7 +199,7 @@ TEST_CASE("Ray intersects Box", "[6.3 intersect]"){
   Ray ray{ray_origin, ray_direction};
   float distance{0.0};
 
-  Box box{glm::vec3{-4,-2,2}, glm::vec3{1,1,1}, "Zu schneidende Box",
+  Box box{glm::vec3{-4,-2,-2}, glm::vec3{1,1,1}, "Zu schneidende Box",
           Material{}};
   REQUIRE(box.intersect(ray, distance));
   REQUIRE(distance == 1.0f);
