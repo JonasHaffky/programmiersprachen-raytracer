@@ -88,4 +88,3 @@
     glm::vec3 p = hit.surface_pt_;
     return glm::normalize(p - ctr_);
 }
-}

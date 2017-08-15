@@ -1,4 +1,4 @@
-#include "sdfloader.hpp"
+#include "SDFloader.hpp"
 #include <map>
 
 Scene loadSDF(std::string const& fileIn) {
