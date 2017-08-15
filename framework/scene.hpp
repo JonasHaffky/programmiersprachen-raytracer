@@ -1,21 +1,32 @@
-#ifndef SCENE_HPP
-#define SCENE_HPP
-
+#ifndef BUW_SCENE_HPP
+#define BUW_SCENE_HPP
 #include "material.hpp"
-#include <iostream>
-#include <cstdlib>
+#include "shape.hpp"
+#include "sphere.hpp"
+#include "box.hpp"
+#include "camera.hpp"
+#include "lightsource.hpp"
+#include "color.hpp"
+#include "composite.hpp"
+#include <iostream>      
 #include <fstream>
+#include <sstream> 
 #include <string>
-#include <sstream>
+#include <map>
 #include <vector>
-#include <memory>
 
-struct Scene{
+struct Scene {
 
-  Scene loadScene(std::string const& fileIn) const;
-  void addMaterial(Material const& m);
-  void printScene() const;
+    // member
+  unsigned int width_; // canvas size (x * y)
+  unsigned int height_; 
+  std::map<std::string, Material> materials_; 
+  // std::vector<std::shared_ptr<Shape>> shapes_;
+  std::shared_ptr<Composite> composite_; // Added with exercise 7.2
+  std::vector<LightSource> lights_;
+  Camera cam_; // std::shared_ptr<Camera>
+  std::string fileOut_;
 
-  std::vector<std::shared_ptr<Material>> materials_;
 };
-#endif //SCENE_HPP
+
+#endif // BUW_SCENE_HPP

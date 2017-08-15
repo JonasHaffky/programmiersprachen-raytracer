@@ -1,43 +1,33 @@
-#ifndef MATERIAL_HPP
-#define MATERIAL_HPP
-
-#include <string>
-#include <iostream>
+#ifndef BUW_MATERIAL_HPP
+#define BUW_MATERIAL_HPP
 #include "color.hpp"
+#include <glm/glm.hpp>
+#include <glm/vec3.hpp>
+#include <string>
 
-struct Material{
+struct Material {
+		// constructors
+	Material();
+	Material(std::string const& name, Color const& ka, Color const& kd, Color const& ks, float m);
+	Material(std::string const& name, Color const& ka, Color const& kd, Color const& ks, float m, float ri);
 
-//Konstruktoren
-  Material():
-    name_{"Default Material"},
-    ka_{Color{}},
-    kd_{Color{}},
-    ks_{Color{}},
-    m_{0.0f}{}
+		// functions
+	std::ostream& print(std::ostream& os) const;
+	Color const& ambient() const;
+	Color const& diffuse() const;
+	Color const& specular() const;
+	float exponent() const;
+	float refraction() const;
 
-  Material(std::string name, Color a, Color d, Color s, float m):
-    name_{name},
-    ka_{a},
-    kd_{d},
-    ks_{s},
-    m_{m}{}
-
-
-  //friend, da es ja aus der Shape aufgerufen wird!
-  friend std::ostream& operator<<(std::ostream& os, Material const& mat){
-    os << "Materialname: " << mat.name_ << std::endl <<
-          "ka: " << mat.ka_ << std::endl<<
-          "kd: " << mat.kd_ <<std::endl<<
-          "ks: " << mat.ks_ << std::endl<<
-          "m: " << mat.m_ << std::endl;
-    return os;
-  }
-
-//Member
-  std::string name_;
-  Color ka_;
-  Color kd_;
-  Color ks_;
-  float m_;
+		// member
+	std::string name_;
+	Color ka_; // ambient reflection
+	Color kd_; // diffuse reflection
+	Color ks_; // specular reflection
+	float m_;  // Exponent für Spiegelungseigenschaften
+	float ri_; // index of refraction
 };
-#endif //MATERIAL_HPP
+
+std::ostream& operator << (std::ostream& os, Material const& mat);
+
+#endif //BUW_MATERIAL_HPP

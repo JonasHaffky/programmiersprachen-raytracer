@@ -1,27 +1,13 @@
-#ifndef SDFLOADER_HPP
-#define SDFLOADER_HPP
+#ifndef BUW_SDFLOADER_HPP
+#define BUW_SDFLOADER_HPP
+#include "scene.hpp"
 
-#include "material.hpp"
-#include <iostream>
-#include <cstdlib>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <vector>
+struct SDFloader {
 
-class SDFloader{
-  /*bekommt einen file im SDF Format übergeben,
-  *liest ihn ein und gibt eine Scene zurück
-  */
-public:
-  //Methoden
-  void loadMaterial(std::string const& fileIn) const;
-  void addMaterial(Material const& m);
-  void print() const;
-
-//Member
-private:
-  std::vector<Material> materials_;
+  // under construction
 
 };
-#endif //SDFLOADER_HPP
+
+Scene loadSDF(std::string const& fileIn);
+
+#endif // BUW_SDFLOADER_HPP

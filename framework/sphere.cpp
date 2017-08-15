@@ -1,50 +1,91 @@
+// sphere.cpp (Programmiersprachen Aufgabe 5)
+
 #include "sphere.hpp"
+  
+    // default constructor
+  Sphere::Sphere() :
+  Shape {"Sphere", {}},
+  ctr_ {0.0f, 0.0f, 0.0f}, 
+  rad_ {0.0f} {}
 
-Sphere::Sphere():
-  Shape{},
-  center_{0.0f, 0.0f, 0.0f},
-  radius_{1.0f}{
-	  std::cout << "Default Constructor derived class Sphere\n";
+    // Constructor takes center and radius
+  Sphere::Sphere(glm::vec3 const& ctr, float rad) :
+  Shape {"Sphere", {}}, 
+  ctr_ {ctr},
+  rad_ {rad} {}
+
+    // Constructor takes name, color, center and radius
+  Sphere::Sphere(std::string const& name, Material const& mat, glm::vec3 const& ctr, float rad) :
+  Shape {name, mat},
+  ctr_ {ctr}, 
+  rad_ {rad} {}
+
+    // Destructor 
+  Sphere::~Sphere() {
+    
   }
 
-Sphere::Sphere(glm::vec3 const& center, float radius,
-              std::string const& name, Material const& material):
-  Shape{name, material},
-  center_{center},
-  radius_{radius}{
-	  std::cout << "Constructor derived class Sphere\n";
+    // get area A = 4 * pi * r^2
+  float Sphere::area() const {
+    return 4.0f * M_PI * rad_ * rad_;
   }
 
-Sphere::~Sphere(){
-  std::cout << "Deconstructor derived class Sphere\n";
-}
+    // get volume V = 4/3 * pi * r^3
+  float Sphere::volume() const {
+    return std::abs((4.0f / 3.0f) * M_PI * rad_ * rad_ * rad_);
+  }
 
-glm::vec3 const& Sphere::getCenter() const{
-  return center_;
-}
+    // prints Sphere object
+  std::ostream& Sphere::print(std::ostream& os) const {
+    Shape::print(os);
+    os << "Center: (" << ctr_.x << ", "  //glm::to_string(glm::vec3)
+    << ctr_.y << ", " 
+    << ctr_.z << ")" << "\n" 
+    << "Radius: " << rad_ 
+    << std::endl;
+    return os;
+  }
 
-float Sphere::getRadius() const{
-  return radius_;
-}
+    // get center
+  glm::vec3 const& Sphere::center() const {
+    return ctr_;
+  }
 
-float Sphere::area() const{
-  return 4.0 * M_PI * radius_ * radius_;
-}
+    // get radius
+  float Sphere::radius() const {
+    return rad_;
+  }
 
-float Sphere::volume() const{
-  return ((4.0 * M_PI * pow(radius_, 3.0))/3.0);
-}
+    // set center
+  void Sphere::center(glm::vec3 const& ctr) {
+    ctr_ = ctr;
+  }
 
-std::ostream& Sphere::print(std::ostream& os) const{
-  //erst Name und Color, dann das Sphere-spezifische
-  Shape::print(os);
-  os << "Center: " << "(" << center_.x << "," << center_.y << "," << center_.z << "),\n"
-  << "Radius: " << radius_ << "\n" << "\n";
-  return os;
-}
+    // set radius 
+  void Sphere::radius(float rad) {
+    rad_ = rad;
+  }
 
-bool Sphere::intersect(Ray const& ray, float& t) const{
-  //distance ist dann der Abstand vom ray.origin zum nächsten Punkt der Kugel
-  //bekommt nen Ray und ne "leere" distance, wird auf sphere aufgerufen
-  return glm::intersectRaySphere(ray.origin_, ray.direction_, center_, radius_*radius_, t);
+  // bool Sphere::intersect(Ray const& ray, float& distance) const {
+  //   // ray.direction_ = glm::normalize(ray.direction_);
+  //   return glm::intersectRaySphere(ray.origin_, ray.direction_, ctr_, rad_ * rad_, distance);
+  // }
+
+  OptiHit Sphere::intersect(Ray const& ray) const {
+    float t = 0.0f;
+    bool res = glm::intersectRaySphere(ray.origin_, ray.direction_,
+      ctr_, rad_*rad_, t);
+    if (res == true){
+      glm::vec3 surface_pt = ray.origin_ + t * ray.direction_;
+      glm::vec3 normalen_vec = glm::normalize(surface_pt - ctr_);
+      return OptiHit{true, t, this, normalen_vec, surface_pt};
+    }
+    return OptiHit{};
+  }
+
+
+  glm::vec3 Sphere::calc_normalen_vec(OptiHit const& hit) const {
+    glm::vec3 p = hit.surface_pt_;
+    return glm::normalize(p - ctr_);
+}
 }
