@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebun
 CMakeFiles/nanovg.dir/all:
 	$(MAKE) -f CMakeFiles/nanovg.dir/build.make CMakeFiles/nanovg.dir/depend
 	$(MAKE) -f CMakeFiles/nanovg.dir/build.make CMakeFiles/nanovg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=34,35 "Built target nanovg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=37,38 "Built target nanovg"
 .PHONY : CMakeFiles/nanovg.dir/all
 
 # Include target in all.
@@ -139,7 +139,7 @@ external/glfw-3.2.1/src/preinstall:
 external/glfw-3.2.1/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) -f external/glfw-3.2.1/src/CMakeFiles/glfw.dir/build.make external/glfw-3.2.1/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) -f external/glfw-3.2.1/src/CMakeFiles/glfw.dir/build.make external/glfw-3.2.1/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36 "Built target glfw"
 .PHONY : external/glfw-3.2.1/src/CMakeFiles/glfw.dir/all
 
 # Include target in all.
@@ -194,7 +194,7 @@ framework/preinstall:
 framework/CMakeFiles/framework.dir/all:
 	$(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/depend
 	$(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target framework"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target framework"
 .PHONY : framework/CMakeFiles/framework.dir/all
 
 # Include target in all.
@@ -204,7 +204,7 @@ all: framework/CMakeFiles/framework.dir/all
 
 # Build rule for subdir invocation for target.
 framework/CMakeFiles/framework.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 framework/CMakeFiles/framework.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 0
 .PHONY : framework/CMakeFiles/framework.dir/rule
@@ -264,7 +264,7 @@ all: source/CMakeFiles/example.dir/all
 
 # Build rule for subdir invocation for target.
 source/CMakeFiles/example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 33
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 36
 	$(MAKE) -f CMakeFiles/Makefile2 source/CMakeFiles/example.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 0
 .PHONY : source/CMakeFiles/example.dir/rule
@@ -292,7 +292,7 @@ source/CMakeFiles/raytracer.dir/all: external/glfw-3.2.1/src/CMakeFiles/glfw.dir
 source/CMakeFiles/raytracer.dir/all: framework/CMakeFiles/framework.dir/all
 	$(MAKE) -f source/CMakeFiles/raytracer.dir/build.make source/CMakeFiles/raytracer.dir/depend
 	$(MAKE) -f source/CMakeFiles/raytracer.dir/build.make source/CMakeFiles/raytracer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=36,37 "Built target raytracer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=39,40 "Built target raytracer"
 .PHONY : source/CMakeFiles/raytracer.dir/all
 
 # Include target in all.
@@ -302,7 +302,7 @@ all: source/CMakeFiles/raytracer.dir/all
 
 # Build rule for subdir invocation for target.
 source/CMakeFiles/raytracer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 33
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 36
 	$(MAKE) -f CMakeFiles/Makefile2 source/CMakeFiles/raytracer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 0
 .PHONY : source/CMakeFiles/raytracer.dir/rule
@@ -329,7 +329,7 @@ clean: source/CMakeFiles/raytracer.dir/clean
 source/CMakeFiles/tests.dir/all: framework/CMakeFiles/framework.dir/all
 	$(MAKE) -f source/CMakeFiles/tests.dir/build.make source/CMakeFiles/tests.dir/depend
 	$(MAKE) -f source/CMakeFiles/tests.dir/build.make source/CMakeFiles/tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=38,39 "Built target tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=41,42 "Built target tests"
 .PHONY : source/CMakeFiles/tests.dir/all
 
 # Include target in all.
@@ -339,7 +339,7 @@ all: source/CMakeFiles/tests.dir/all
 
 # Build rule for subdir invocation for target.
 source/CMakeFiles/tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 20
 	$(MAKE) -f CMakeFiles/Makefile2 source/CMakeFiles/tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles 0
 .PHONY : source/CMakeFiles/tests.dir/rule

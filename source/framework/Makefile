@@ -277,6 +277,60 @@ composite.cpp.s:
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source && $(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/composite.cpp.s
 .PHONY : composite.cpp.s
 
+cone.o: cone.cpp.o
+
+.PHONY : cone.o
+
+# target to build an object file
+cone.cpp.o:
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source && $(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/cone.cpp.o
+.PHONY : cone.cpp.o
+
+cone.i: cone.cpp.i
+
+.PHONY : cone.i
+
+# target to preprocess a source file
+cone.cpp.i:
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source && $(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/cone.cpp.i
+.PHONY : cone.cpp.i
+
+cone.s: cone.cpp.s
+
+.PHONY : cone.s
+
+# target to generate assembly for a file
+cone.cpp.s:
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source && $(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/cone.cpp.s
+.PHONY : cone.cpp.s
+
+cylinder.o: cylinder.cpp.o
+
+.PHONY : cylinder.o
+
+# target to build an object file
+cylinder.cpp.o:
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source && $(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/cylinder.cpp.o
+.PHONY : cylinder.cpp.o
+
+cylinder.i: cylinder.cpp.i
+
+.PHONY : cylinder.i
+
+# target to preprocess a source file
+cylinder.cpp.i:
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source && $(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/cylinder.cpp.i
+.PHONY : cylinder.cpp.i
+
+cylinder.s: cylinder.cpp.s
+
+.PHONY : cylinder.s
+
+# target to generate assembly for a file
+cylinder.cpp.s:
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source && $(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/cylinder.cpp.s
+.PHONY : cylinder.cpp.s
+
 glew.o: glew.c.o
 
 .PHONY : glew.o
@@ -411,6 +465,33 @@ ppmwriter.s: ppmwriter.cpp.s
 ppmwriter.cpp.s:
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source && $(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/ppmwriter.cpp.s
 .PHONY : ppmwriter.cpp.s
+
+pyramid.o: pyramid.cpp.o
+
+.PHONY : pyramid.o
+
+# target to build an object file
+pyramid.cpp.o:
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source && $(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/pyramid.cpp.o
+.PHONY : pyramid.cpp.o
+
+pyramid.i: pyramid.cpp.i
+
+.PHONY : pyramid.i
+
+# target to preprocess a source file
+pyramid.cpp.i:
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source && $(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/pyramid.cpp.i
+.PHONY : pyramid.cpp.i
+
+pyramid.s: pyramid.cpp.s
+
+.PHONY : pyramid.s
+
+# target to generate assembly for a file
+pyramid.cpp.s:
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source && $(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/pyramid.cpp.s
+.PHONY : pyramid.cpp.s
 
 ray.o: ray.cpp.o
 
@@ -572,6 +653,12 @@ help:
 	@echo "... composite.o"
 	@echo "... composite.i"
 	@echo "... composite.s"
+	@echo "... cone.o"
+	@echo "... cone.i"
+	@echo "... cone.s"
+	@echo "... cylinder.o"
+	@echo "... cylinder.i"
+	@echo "... cylinder.s"
 	@echo "... glew.o"
 	@echo "... glew.i"
 	@echo "... glew.s"
@@ -587,6 +674,9 @@ help:
 	@echo "... ppmwriter.o"
 	@echo "... ppmwriter.i"
 	@echo "... ppmwriter.s"
+	@echo "... pyramid.o"
+	@echo "... pyramid.i"
+	@echo "... pyramid.s"
 	@echo "... ray.o"
 	@echo "... ray.i"
 	@echo "... ray.s"

@@ -129,9 +129,33 @@ framework/CMakeFiles/framework.dir/composite.cpp.o.provides: framework/CMakeFile
 framework/CMakeFiles/framework.dir/composite.cpp.o.provides.build: framework/CMakeFiles/framework.dir/composite.cpp.o
 
 
+framework/CMakeFiles/framework.dir/cylinder.cpp.o: framework/CMakeFiles/framework.dir/flags.make
+framework/CMakeFiles/framework.dir/cylinder.cpp.o: ../framework/cylinder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object framework/CMakeFiles/framework.dir/cylinder.cpp.o"
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/cylinder.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/cylinder.cpp
+
+framework/CMakeFiles/framework.dir/cylinder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/framework.dir/cylinder.cpp.i"
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/cylinder.cpp > CMakeFiles/framework.dir/cylinder.cpp.i
+
+framework/CMakeFiles/framework.dir/cylinder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/cylinder.cpp.s"
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/cylinder.cpp -o CMakeFiles/framework.dir/cylinder.cpp.s
+
+framework/CMakeFiles/framework.dir/cylinder.cpp.o.requires:
+
+.PHONY : framework/CMakeFiles/framework.dir/cylinder.cpp.o.requires
+
+framework/CMakeFiles/framework.dir/cylinder.cpp.o.provides: framework/CMakeFiles/framework.dir/cylinder.cpp.o.requires
+	$(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/cylinder.cpp.o.provides.build
+.PHONY : framework/CMakeFiles/framework.dir/cylinder.cpp.o.provides
+
+framework/CMakeFiles/framework.dir/cylinder.cpp.o.provides.build: framework/CMakeFiles/framework.dir/cylinder.cpp.o
+
+
 framework/CMakeFiles/framework.dir/box.cpp.o: framework/CMakeFiles/framework.dir/flags.make
 framework/CMakeFiles/framework.dir/box.cpp.o: ../framework/box.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object framework/CMakeFiles/framework.dir/box.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object framework/CMakeFiles/framework.dir/box.cpp.o"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/box.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/box.cpp
 
 framework/CMakeFiles/framework.dir/box.cpp.i: cmake_force
@@ -155,7 +179,7 @@ framework/CMakeFiles/framework.dir/box.cpp.o.provides.build: framework/CMakeFile
 
 framework/CMakeFiles/framework.dir/ppmwriter.cpp.o: framework/CMakeFiles/framework.dir/flags.make
 framework/CMakeFiles/framework.dir/ppmwriter.cpp.o: ../framework/ppmwriter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object framework/CMakeFiles/framework.dir/ppmwriter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object framework/CMakeFiles/framework.dir/ppmwriter.cpp.o"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/ppmwriter.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/ppmwriter.cpp
 
 framework/CMakeFiles/framework.dir/ppmwriter.cpp.i: cmake_force
@@ -179,7 +203,7 @@ framework/CMakeFiles/framework.dir/ppmwriter.cpp.o.provides.build: framework/CMa
 
 framework/CMakeFiles/framework.dir/material.cpp.o: framework/CMakeFiles/framework.dir/flags.make
 framework/CMakeFiles/framework.dir/material.cpp.o: ../framework/material.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object framework/CMakeFiles/framework.dir/material.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object framework/CMakeFiles/framework.dir/material.cpp.o"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/material.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/material.cpp
 
 framework/CMakeFiles/framework.dir/material.cpp.i: cmake_force
@@ -203,7 +227,7 @@ framework/CMakeFiles/framework.dir/material.cpp.o.provides.build: framework/CMak
 
 framework/CMakeFiles/framework.dir/sphere.cpp.o: framework/CMakeFiles/framework.dir/flags.make
 framework/CMakeFiles/framework.dir/sphere.cpp.o: ../framework/sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object framework/CMakeFiles/framework.dir/sphere.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object framework/CMakeFiles/framework.dir/sphere.cpp.o"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/sphere.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/sphere.cpp
 
 framework/CMakeFiles/framework.dir/sphere.cpp.i: cmake_force
@@ -225,9 +249,33 @@ framework/CMakeFiles/framework.dir/sphere.cpp.o.provides: framework/CMakeFiles/f
 framework/CMakeFiles/framework.dir/sphere.cpp.o.provides.build: framework/CMakeFiles/framework.dir/sphere.cpp.o
 
 
+framework/CMakeFiles/framework.dir/pyramid.cpp.o: framework/CMakeFiles/framework.dir/flags.make
+framework/CMakeFiles/framework.dir/pyramid.cpp.o: ../framework/pyramid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object framework/CMakeFiles/framework.dir/pyramid.cpp.o"
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/pyramid.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/pyramid.cpp
+
+framework/CMakeFiles/framework.dir/pyramid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/framework.dir/pyramid.cpp.i"
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/pyramid.cpp > CMakeFiles/framework.dir/pyramid.cpp.i
+
+framework/CMakeFiles/framework.dir/pyramid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/pyramid.cpp.s"
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/pyramid.cpp -o CMakeFiles/framework.dir/pyramid.cpp.s
+
+framework/CMakeFiles/framework.dir/pyramid.cpp.o.requires:
+
+.PHONY : framework/CMakeFiles/framework.dir/pyramid.cpp.o.requires
+
+framework/CMakeFiles/framework.dir/pyramid.cpp.o.provides: framework/CMakeFiles/framework.dir/pyramid.cpp.o.requires
+	$(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/pyramid.cpp.o.provides.build
+.PHONY : framework/CMakeFiles/framework.dir/pyramid.cpp.o.provides
+
+framework/CMakeFiles/framework.dir/pyramid.cpp.o.provides.build: framework/CMakeFiles/framework.dir/pyramid.cpp.o
+
+
 framework/CMakeFiles/framework.dir/window.cpp.o: framework/CMakeFiles/framework.dir/flags.make
 framework/CMakeFiles/framework.dir/window.cpp.o: ../framework/window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object framework/CMakeFiles/framework.dir/window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object framework/CMakeFiles/framework.dir/window.cpp.o"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/window.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/window.cpp
 
 framework/CMakeFiles/framework.dir/window.cpp.i: cmake_force
@@ -251,7 +299,7 @@ framework/CMakeFiles/framework.dir/window.cpp.o.provides.build: framework/CMakeF
 
 framework/CMakeFiles/framework.dir/pixel.cpp.o: framework/CMakeFiles/framework.dir/flags.make
 framework/CMakeFiles/framework.dir/pixel.cpp.o: ../framework/pixel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object framework/CMakeFiles/framework.dir/pixel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object framework/CMakeFiles/framework.dir/pixel.cpp.o"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/pixel.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/pixel.cpp
 
 framework/CMakeFiles/framework.dir/pixel.cpp.i: cmake_force
@@ -275,7 +323,7 @@ framework/CMakeFiles/framework.dir/pixel.cpp.o.provides.build: framework/CMakeFi
 
 framework/CMakeFiles/framework.dir/shape.cpp.o: framework/CMakeFiles/framework.dir/flags.make
 framework/CMakeFiles/framework.dir/shape.cpp.o: ../framework/shape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object framework/CMakeFiles/framework.dir/shape.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object framework/CMakeFiles/framework.dir/shape.cpp.o"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/shape.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/shape.cpp
 
 framework/CMakeFiles/framework.dir/shape.cpp.i: cmake_force
@@ -297,9 +345,33 @@ framework/CMakeFiles/framework.dir/shape.cpp.o.provides: framework/CMakeFiles/fr
 framework/CMakeFiles/framework.dir/shape.cpp.o.provides.build: framework/CMakeFiles/framework.dir/shape.cpp.o
 
 
+framework/CMakeFiles/framework.dir/cone.cpp.o: framework/CMakeFiles/framework.dir/flags.make
+framework/CMakeFiles/framework.dir/cone.cpp.o: ../framework/cone.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object framework/CMakeFiles/framework.dir/cone.cpp.o"
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/cone.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/cone.cpp
+
+framework/CMakeFiles/framework.dir/cone.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/framework.dir/cone.cpp.i"
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/cone.cpp > CMakeFiles/framework.dir/cone.cpp.i
+
+framework/CMakeFiles/framework.dir/cone.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/framework.dir/cone.cpp.s"
+	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/cone.cpp -o CMakeFiles/framework.dir/cone.cpp.s
+
+framework/CMakeFiles/framework.dir/cone.cpp.o.requires:
+
+.PHONY : framework/CMakeFiles/framework.dir/cone.cpp.o.requires
+
+framework/CMakeFiles/framework.dir/cone.cpp.o.provides: framework/CMakeFiles/framework.dir/cone.cpp.o.requires
+	$(MAKE) -f framework/CMakeFiles/framework.dir/build.make framework/CMakeFiles/framework.dir/cone.cpp.o.provides.build
+.PHONY : framework/CMakeFiles/framework.dir/cone.cpp.o.provides
+
+framework/CMakeFiles/framework.dir/cone.cpp.o.provides.build: framework/CMakeFiles/framework.dir/cone.cpp.o
+
+
 framework/CMakeFiles/framework.dir/renderer.cpp.o: framework/CMakeFiles/framework.dir/flags.make
 framework/CMakeFiles/framework.dir/renderer.cpp.o: ../framework/renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object framework/CMakeFiles/framework.dir/renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object framework/CMakeFiles/framework.dir/renderer.cpp.o"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/renderer.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/renderer.cpp
 
 framework/CMakeFiles/framework.dir/renderer.cpp.i: cmake_force
@@ -323,7 +395,7 @@ framework/CMakeFiles/framework.dir/renderer.cpp.o.provides.build: framework/CMak
 
 framework/CMakeFiles/framework.dir/SDFloader.cpp.o: framework/CMakeFiles/framework.dir/flags.make
 framework/CMakeFiles/framework.dir/SDFloader.cpp.o: ../framework/SDFloader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object framework/CMakeFiles/framework.dir/SDFloader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object framework/CMakeFiles/framework.dir/SDFloader.cpp.o"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/SDFloader.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/SDFloader.cpp
 
 framework/CMakeFiles/framework.dir/SDFloader.cpp.i: cmake_force
@@ -347,7 +419,7 @@ framework/CMakeFiles/framework.dir/SDFloader.cpp.o.provides.build: framework/CMa
 
 framework/CMakeFiles/framework.dir/camera.cpp.o: framework/CMakeFiles/framework.dir/flags.make
 framework/CMakeFiles/framework.dir/camera.cpp.o: ../framework/camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object framework/CMakeFiles/framework.dir/camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object framework/CMakeFiles/framework.dir/camera.cpp.o"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/camera.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/camera.cpp
 
 framework/CMakeFiles/framework.dir/camera.cpp.i: cmake_force
@@ -371,7 +443,7 @@ framework/CMakeFiles/framework.dir/camera.cpp.o.provides.build: framework/CMakeF
 
 framework/CMakeFiles/framework.dir/ray.cpp.o: framework/CMakeFiles/framework.dir/flags.make
 framework/CMakeFiles/framework.dir/ray.cpp.o: ../framework/ray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object framework/CMakeFiles/framework.dir/ray.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object framework/CMakeFiles/framework.dir/ray.cpp.o"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/framework.dir/ray.cpp.o -c /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/framework/ray.cpp
 
 framework/CMakeFiles/framework.dir/ray.cpp.i: cmake_force
@@ -398,13 +470,16 @@ framework_OBJECTS = \
 "CMakeFiles/framework.dir/glew.c.o" \
 "CMakeFiles/framework.dir/lightsource.cpp.o" \
 "CMakeFiles/framework.dir/composite.cpp.o" \
+"CMakeFiles/framework.dir/cylinder.cpp.o" \
 "CMakeFiles/framework.dir/box.cpp.o" \
 "CMakeFiles/framework.dir/ppmwriter.cpp.o" \
 "CMakeFiles/framework.dir/material.cpp.o" \
 "CMakeFiles/framework.dir/sphere.cpp.o" \
+"CMakeFiles/framework.dir/pyramid.cpp.o" \
 "CMakeFiles/framework.dir/window.cpp.o" \
 "CMakeFiles/framework.dir/pixel.cpp.o" \
 "CMakeFiles/framework.dir/shape.cpp.o" \
+"CMakeFiles/framework.dir/cone.cpp.o" \
 "CMakeFiles/framework.dir/renderer.cpp.o" \
 "CMakeFiles/framework.dir/SDFloader.cpp.o" \
 "CMakeFiles/framework.dir/camera.cpp.o" \
@@ -416,20 +491,23 @@ framework_EXTERNAL_OBJECTS =
 framework/libframework.a: framework/CMakeFiles/framework.dir/glew.c.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/lightsource.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/composite.cpp.o
+framework/libframework.a: framework/CMakeFiles/framework.dir/cylinder.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/box.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/ppmwriter.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/material.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/sphere.cpp.o
+framework/libframework.a: framework/CMakeFiles/framework.dir/pyramid.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/window.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/pixel.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/shape.cpp.o
+framework/libframework.a: framework/CMakeFiles/framework.dir/cone.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/renderer.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/SDFloader.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/camera.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/ray.cpp.o
 framework/libframework.a: framework/CMakeFiles/framework.dir/build.make
 framework/libframework.a: framework/CMakeFiles/framework.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX static library libframework.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX static library libframework.a"
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && $(CMAKE_COMMAND) -P CMakeFiles/framework.dir/cmake_clean_target.cmake
 	cd /home/jonashaffky/Dokumente/Studium/Programmiersprachen/Uebung/Uebung5/programmiersprachen-raytracer/source/framework && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/framework.dir/link.txt --verbose=$(VERBOSE)
 
@@ -441,13 +519,16 @@ framework/CMakeFiles/framework.dir/build: framework/libframework.a
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/glew.c.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/lightsource.cpp.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/composite.cpp.o.requires
+framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/cylinder.cpp.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/box.cpp.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/ppmwriter.cpp.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/material.cpp.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/sphere.cpp.o.requires
+framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/pyramid.cpp.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/window.cpp.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/pixel.cpp.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/shape.cpp.o.requires
+framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/cone.cpp.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/renderer.cpp.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/SDFloader.cpp.o.requires
 framework/CMakeFiles/framework.dir/requires: framework/CMakeFiles/framework.dir/camera.cpp.o.requires
