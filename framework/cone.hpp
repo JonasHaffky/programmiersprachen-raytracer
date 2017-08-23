@@ -9,8 +9,8 @@
 class Cone : public Shape {
 public:
     Cone();
-    Cone(glm::vec3 const& center, double radius, double hight);
-    Cone(std::string const& name, Material const& mat, glm::vec3 const& center, double edge, double hight);
+    Cone(glm::vec3 const& center, double cradius, double cheight);
+    Cone(std::string const& name, Material const& mat, glm::vec3 const& center, double cradius, double cheight);
     ~Cone() override;
  
     float area() const override;
@@ -21,9 +21,9 @@ public:
     double getSide_hight()const;
  
 private:
-    glm::vec3 center_;
-    double radius_;
-    double hight_;
+    glm::vec3 ccenter_;
+    double cradius_;
+    double cheight_;
  
 };
 #endif // BUW_CONE_HPP

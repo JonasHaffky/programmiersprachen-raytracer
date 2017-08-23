@@ -5,23 +5,23 @@
  
 Cone::Cone():
 Shape { "cone", {}},
-center_{ 0.0f, 0.0f, 0.0f },
-radius_{1.0f},
-hight_{1.0f}
+ccenter_{ 0.0f, 0.0f, 0.0f },
+cradius_{1.0f},
+cheight_{1.0f}
 {}
  
-Cone::Cone(glm::vec3 const & center, double radius, double hight):
+Cone::Cone(glm::vec3 const & ccenter, double cradius, double cheight):
 Shape { "cone", {}},
-center_{ center },
-radius_{ radius },
-hight_{ hight }
+ccenter_{ ccenter },
+cradius_{ cradius },
+cheight_{ cheight }
 {}
  
-Cone::Cone(std::string const & name, Material const & mat, glm::vec3 const & center, double radius, double hight):
+Cone::Cone(std::string const & name, Material const & mat, glm::vec3 const & ccenter, double cradius, double cheight):
     Shape{ name , mat },
-    center_{ center },
-    radius_{ radius },
-    hight_{ hight }
+    ccenter_{ ccenter },
+    cradius_{ cradius },
+    cheight_{ cheight }
 {}
  
  
@@ -29,29 +29,29 @@ Cone::~Cone() {}
  
 float Cone::area() const
 {
-    return (M_PI*radius_*radius_)+(M_PI*radius_*getSide_hight());
+    return (M_PI*cradius_*cradius_)+(M_PI*cradius_*getSide_hight());
 }
  
 float Cone::volume() const
 {
-    return (M_PI*radius_*radius_*hight_)/3;
+    return (M_PI*cradius_*cradius_*cheight_)/3;
 }
  
 std::ostream & Cone::print(std::ostream & os) const
 {
     Shape::print(os);
-    os << "center: (" << center_.x << 
-        center_.y << 
-        center_.z << ")" << ", "  "\n"
-        << "radius: " << radius_
-        << "hight: " << hight_
+    os << "center: (" << ccenter_.x << 
+        ccenter_.y << 
+        ccenter_.z << ")" << ", "  "\n"
+        << "radius: " << cradius_
+        << "hight: " << cheight_
         << std::endl;
     return os;
 }
  
 glm::vec3 Cone::center() const
 {
-    return center_;
+    return ccenter_;
 }
  
 bool Cone::inside(glm::vec3 const & point) const
@@ -62,5 +62,5 @@ bool Cone::inside(glm::vec3 const & point) const
  
 double Cone::getSide_hight() const
 {
-    return sqrt(pow(hight_,2.0)+pow(radius_,2.0));
+    return sqrt(pow(cheight_,2.0)+pow(cradius_,2.0));
 }

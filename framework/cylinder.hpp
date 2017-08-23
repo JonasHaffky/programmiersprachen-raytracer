@@ -9,8 +9,8 @@
 class Cylinder : public Shape {
 public:
     Cylinder();
-    Cylinder(glm::vec3 const& bottom_center, double radius, double hight);
-    Cylinder(std::string const& name, Material const& mat, glm::vec3 const& bottom_center, double edge, double hight);
+    Cylinder(glm::vec3 const& bottom_center, double radius, double height);
+    Cylinder(std::string const& name, Material const& mat, glm::vec3 const& bottom_center,double radius, double height);
     ~Cylinder() override;
  
     float area() const override;
@@ -22,7 +22,7 @@ public:
 private:
     glm::vec3 bottom_center_;
     double radius_;
-    double hight_;
+    double height_;
  
 };
 #endif // BUW_CYLINDER_HPP

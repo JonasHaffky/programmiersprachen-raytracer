@@ -105,6 +105,32 @@ Scene loadSDF(std::string const& fileIn) {
             // std::cout << "Added Sphere: " << *loadedScene.shapes_[vectorSizeShapes - 1] << std::endl;
             std::cout << "Added Sphere: " << *sphere << std::endl;
           }
+          
+          else if (keyword == "cylinder") {
+            std::string cylinderName;
+            glm::vec3 bottom_center_; 
+            double radius_;
+            double height_;
+            std::string cylinderClrName;
+
+            ss >> cylinderName;
+            ss >> bottom_center_.x;
+            ss >> bottom_center_.y;
+            ss >> bottom_center_.z;
+            ss >> radius_;
+            ss >> height_;
+            ss >> cylinderClrName;
+
+              // find() points from Name to Material (http://en.cppreference.com/w/cpp/container/map/find)
+            Material cylinderMat = loadedScene.materials_.find(cylinderClrName) -> second;
+
+              // new entry in shapes_ (ptr)
+
+            auto cylinder = std::make_shared<Cylinder>(cylinderName, cylinderMat, bottom_center_, radius_, height_);
+            findeShape[cylinderName] = cylinder;
+            // std::cout << "Added Cylinder: " << *loadedScene.shapes_[vectorSizeShapes - 1] << std::endl;
+            std::cout << "Added Cylinder: " << *cylinder << std::endl;
+          }
 
             // loads composites # composites 
           else if (keyword == "composite") {

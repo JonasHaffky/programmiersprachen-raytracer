@@ -1,0 +1,14 @@
+# materials 
+define material red .5 0 0 .5 .1 .1 .5 .5 .5 150 0
+define material green 0 .5 0 .1 .5 .1 .5 .5 .5 50 0
+define material blue 0 0 .5 .1 .1 .5 .5 .5 .5 30 0
+define material yellow .5 .5 0 .9 .9 .1 .8 .8 .8 50 0
+define material grey .05 .05 .05 .7 .7 .7 .4 .4 .4 15 0
+define material darkgrey 0.05 0.05 0.05 .2 .2 .2 .2 .2 .2 100 0
+define material glass 0 0 0 0 0 0 .5 .5 .5 400 1
+define material pinkglass .15 0 0 0.1 0 0 .5 .5 .5 400 1
+define material turkis 0 .4 .4 .1 .4 .4 .2 .6 .6 8 0
+#geometry
+define shape cylinder acylinder  1.5 -1 -2.8 1.65 1 -3.4 green
+define shape box ground -60 -1 2 60 -2 -8 grey
+define shape box background -60 -1 -8 60 10 -9 darkgrey
