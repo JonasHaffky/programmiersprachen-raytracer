@@ -16,16 +16,16 @@ define shape box cbox  -.4 1.1 -3.7 -.3 1.8 -4.8 green
 define shape box dbox -.4 1.8 -3.7 1.5 1.9 -4.8 greenglass
 define shape box ground -60 -1 2 60 -2 -8 grey
 define shape box background -60 -1 -8 60 10 -9 darkgrey
-define shape sphere asphere 1 -1 -4.3 0.1 blue
-define shape sphere bsphere .5 -1 -4.3 0.1 yellow
-define shape sphere csphere .0 -1 -4.3 0.1 turkis
-define shape sphere dsphere 1 .4 -4.3 0.1 blue
-define shape sphere esphere .5 .4 -4.3 0.1 yellow
-define shape sphere fsphere .0 .4 -4.3 0.1 turkis
-define shape sphere gsphere 1 1.8 -4.3 0.1 blue
-define shape sphere hsphere .5 1.8 -4.3 0.1 yellow
-define shape sphere isphere .0 1.8 -4.3 0.1 turkis
-define shape sphere jsphere .55 .6 -4.3 .2 glass
+define shape sphere asphere 1 -.3004 -4.3 0.1 blue
+define shape sphere bsphere .5 -.3004 -4.3 0.1 yellow
+define shape sphere csphere .0 -.3004 -4.3 0.1 turkis
+define shape sphere dsphere 1 1.0996 -4.3 0.1 blue
+define shape sphere esphere .5 1.0996 -4.3 0.1 yellow
+define shape sphere fsphere .0 1.0996 -4.3 0.1 turkis
+define shape sphere gsphere 1 2.0332 -4.3 0.1 blue
+define shape sphere hsphere .5 2.0332 -4.3 0.1 yellow
+define shape sphere isphere .0 2.0332 -4.3 0.1 turkis
+define shape sphere jsphere .55 1.47498 -4.3 .2 glass
 # composites 
 define shape composite root abox bbox cbox dbox ground background asphere bsphere csphere dsphere esphere fsphere gsphere hsphere isphere jsphere
 # light 
@@ -34,4 +34,4 @@ define light sun2 4 10 1 .15 .15 .15 .15 .15 .15
 # camera 
 define camera eye 45.0 
 # render 
-render eye frame72.ppm 600 600 
+render eye frame102.ppm 600 600 

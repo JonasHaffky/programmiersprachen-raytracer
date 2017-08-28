@@ -25,7 +25,7 @@ define shape sphere fsphere .0 .4 -4.3 0.1 turkis
 define shape sphere gsphere 1 1.8 -4.3 0.1 blue
 define shape sphere hsphere .5 1.8 -4.3 0.1 yellow
 define shape sphere isphere .0 1.8 -4.3 0.1 turkis
-define shape sphere jsphere .55 .6 -4.3 .2 glass
+define shape sphere jsphere -0.6 .6 -4.3 .2 glass
 # composites 
 define shape composite root abox bbox cbox dbox ground background asphere bsphere csphere dsphere esphere fsphere gsphere hsphere isphere jsphere
 # light 
@@ -34,4 +34,4 @@ define light sun2 4 10 1 .15 .15 .15 .15 .15 .15
 # camera 
 define camera eye 45.0 
 # render 
-render eye frame72.ppm 600 600 
+render eye frame60.ppm 600 600 

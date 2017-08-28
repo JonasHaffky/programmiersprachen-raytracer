@@ -19,13 +19,13 @@ define shape box background -60 -1 -8 60 10 -9 darkgrey
 define shape sphere asphere 1 -.8834 -4.3 0.1 blue
 define shape sphere bsphere .5 -.8834 -4.3 0.1 yellow
 define shape sphere csphere .0 -.8834 -4.3 0.1 turkis
-define shape sphere dsphere 1 .4 -4.3 0.1 blue
-define shape sphere esphere .5 .4 -4.3 0.1 yellow
-define shape sphere fsphere .0 .4 -4.3 0.1 turkis
-define shape sphere gsphere 1 1.8 -4.3 0.1 blue
-define shape sphere hsphere .5 1.8 -4.3 0.1 yellow
-define shape sphere isphere .0 1.8 -4.3 0.1 turkis
-define shape sphere jsphere -1.75 .6 -4.3 .2 glass
+define shape sphere dsphere 1 .5166 -4.3 0.1 blue
+define shape sphere esphere .5 .5166 -4.3 0.1 yellow
+define shape sphere fsphere .0 .5166 -4.3 0.1 turkis
+define shape sphere gsphere 1 1.9166 -4.3 0.1 blue
+define shape sphere hsphere .5 1.9166 -4.3 0.1 yellow
+define shape sphere isphere .0 1.9166 -4.3 0.1 turkis
+define shape sphere jsphere -1.015625 -.770834 -2.341666 .2 glass
 # composites 
 define shape composite root abox bbox cbox dbox ground background asphere bsphere csphere dsphere esphere fsphere gsphere hsphere isphere jsphere
 # light 
