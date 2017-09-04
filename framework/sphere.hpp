@@ -3,7 +3,6 @@
 #include "shape.hpp"
 #include "ray.hpp"
 
-  /* * Leaf */ 
 class Sphere : public Shape {
 public: 
   Sphere();

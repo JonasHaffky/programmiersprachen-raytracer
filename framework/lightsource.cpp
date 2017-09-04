@@ -2,11 +2,10 @@
 
 LightSource::LightSource() :
   name_ {"Default Light"},
-  pos_ {0.0f, 1.0f, 0.0f}, // default position (test value)
+  pos_ {0.0f, 1.0f, 0.0f}, // default position 
   ip_ {0.8f, 1.0f, 1.0f}, // white Light 
-  ia_ {0.35f, 0.35f, 0.35f} {} // default ambient Light (test value)
+  ia_ {0.35f, 0.35f, 0.35f} {} // default ambient Light 
   // ambient memeber only works for one Lightsource => there can only be one ambient value in one scene 
-  // => idea: <<abstract>> Lightsource with children (diffuse and ambient light)
 
 LightSource::LightSource(std::string const& name, glm::vec3 const& pos, Color const& point, Color const& ambient) : 
   name_ {name},

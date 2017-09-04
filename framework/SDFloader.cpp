@@ -6,14 +6,12 @@ Scene loadSDF(std::string const& fileIn) {
   std::ifstream file;
   std::string line;
   file.open(fileIn); // opens input file 
-  std::map<std::string, std::shared_ptr<Shape>> findeShape; // added with 7.2 composite
+  std::map<std::string, std::shared_ptr<Shape>> findeShape; 
   Scene loadedScene; 
 
   if (file.is_open()) {
-    // std::cout << "The file is open." << std::endl;
 
     while (std::getline(file, line)) {
-     // std::cout << line << std::endl;
 
         // keyword 
       std::stringstream ss;
@@ -93,7 +91,6 @@ Scene loadSDF(std::string const& fileIn) {
             ss >> sphereRad;
             ss >> sphereClrName;
 
-              // find() points from Name to Material (http://en.cppreference.com/w/cpp/container/map/find)
             Material sphereMat = loadedScene.materials_.find(sphereClrName) -> second;
 
               // new entry in shapes_ (ptr)

@@ -5,7 +5,6 @@
 #include <cmath>
 #include <catch.hpp>
 
-  /* * Leaf */ 
 class Box : public Shape {
 public: 
   Box();

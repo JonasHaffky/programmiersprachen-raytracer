@@ -12,16 +12,15 @@ struct Camera {
 
    // Constructors 
   Camera();
-  Camera(std::string const& name, double aovX);
-  Camera(std::string const& name, double aovX, glm::vec3 const& ori, glm::vec3 const& dir, glm::vec3 const& up);
-  Camera(std::string const& name, double aovX, glm::vec3 const& ori, glm::vec3 const& dir, glm::vec3 const& up,
+  Camera(std::string const& name, double fovX);
+  Camera(std::string const& name, double fovX, glm::vec3 const& ori, glm::vec3 const& dir, glm::vec3 const& up);
+  Camera(std::string const& name, double fovX, glm::vec3 const& ori, glm::vec3 const& dir, glm::vec3 const& up,
     Matrix const& transform);
    // Destructor
   ~Camera();
 
   std::ostream& print(std::ostream& os) const;
   Ray calc_eye_ray(int x, int y, int height, int width) const;
-    // added with exercise 7.6 (Transformations)
   glm::mat4 transformCam() const;
   void translate(glm::vec3 const& v);
   void rotateX(float phi);
@@ -30,11 +29,10 @@ struct Camera {
 
    //member 
   std::string name_;
-  double aovX_; // horizontal angle of view (x-axis)
+  double fovX_; // horizontal angle of view (x-axis)
   glm::vec3 origin_; // {0.0f, 0.0f, 0.0f}
   glm::vec3 direction_; // negative z-axis 
   glm::vec3 upVector_; // camera orientation (which way is up?)
-    // added with exercise 7.6 (Transformations)
   Matrix transform_;
   Matrix transformInv_;
 

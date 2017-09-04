@@ -24,7 +24,7 @@ public:
   std::ostream& print(std::ostream& os) const override;
   void addShape(std::shared_ptr<Shape> const& shape);
   void removeShape(std::shared_ptr<Shape> const& shape);
-  void get_children() const; // ??? 
+  void get_children() const;
   OptiHit intersect(Ray const& ray) const override;
   glm::vec3 calc_normalen_vec(OptiHit const& hit) const override;
 

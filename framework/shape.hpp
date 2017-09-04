@@ -13,7 +13,6 @@
 typedef glm::mat4 Matrix;
 struct OptiHit;
 
-  /* * Component */ 
 class Shape {
 public:
   Shape();
@@ -28,8 +27,6 @@ public:
   virtual std::ostream& print(std::ostream& os) const;
   glm::vec3 calc_surface_pt(Ray const& ray, float distance) const;
 
-
-    // added with exercise 7.6 (Transformations)
   virtual void translate(glm::vec3 const& v);
   virtual void scale(glm::vec3 const& s);
   virtual void rotateX(float phi);

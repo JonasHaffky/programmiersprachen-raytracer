@@ -3,35 +3,35 @@
   // default constructor 
 Camera::Camera() : 
   name_ {"Default Camera"}, 
-  aovX_ {45.0},
+  fovX_ {45.0},
   origin_ {0.0f, 0.0f, 0.0f},
   direction_ {0.0f, 0.0f, -1.0f},
   upVector_ {0.0f, 1.0f, 0.0f}, 
   transform_ {},
   transformInv_ {glm::inverse(transform_)}{}
 
-Camera::Camera(std::string const& name, double aovX) :
+Camera::Camera(std::string const& name, double fovX) :
   name_ {name}, 
-  aovX_ {45.0},
+  fovX_ {45.0},
   origin_ {0.0f, 0.0f, 0.0f},
   direction_ {0.0f, 0.0f, -1.0f},
   upVector_ {0.0f, 1.0f, 0.0f},
   transform_ {},
   transformInv_ {glm::inverse(transform_)} {}
 
-Camera::Camera(std::string const& name, double aovX, glm::vec3 const& ori, glm::vec3 const& dir, glm::vec3 const& up) :
+Camera::Camera(std::string const& name, double fovX, glm::vec3 const& ori, glm::vec3 const& dir, glm::vec3 const& up) :
   name_ {name},
-  aovX_ {aovX},
+  fovX_ {fovX},
   origin_ {ori},
   direction_ {dir},
   upVector_ {up},
   transform_ {},
   transformInv_ {glm::inverse(transform_)} {}
 
-Camera::Camera(std::string const& name, double aovX, glm::vec3 const& ori, glm::vec3 const& dir, glm::vec3 const& up, 
+Camera::Camera(std::string const& name, double fovX, glm::vec3 const& ori, glm::vec3 const& dir, glm::vec3 const& up, 
   Matrix const& transform) :
   name_ {name},
-  aovX_ {aovX},
+  fovX_ {fovX},
   origin_ {ori},
   direction_ {dir},
   upVector_ {up},
@@ -44,7 +44,7 @@ Ray Camera::calc_eye_ray(int x, int y, int height, int width) const {
 
     glm::vec3 direction{float(x) * 1.0 / float(width) - 0.5,
       float(y) * 1.0 / float(height) - 0.5, 
-      -1.0 * (0.5 / tan(aovX_/2))}; // distance to canvas = 0.5 / tan(angle / 2)
+      -1.0 * (0.5 / tan(fovX_/2))}; // distance to canvas = 0.5 / tan(angle / 2)
   
     Ray camRay{origin_, direction};
     auto transformedCam = transformCam();
@@ -123,7 +123,7 @@ void Camera::rotateZ(float phi) {
   // print Camera
 std::ostream& Camera::print(std::ostream& os) const {
   os << "Name: " << name_ << "\n"
-  << "Angle of View: " << aovX_ << "° \n"
+  << "Angle of View: " << fovX_ << "° \n"
   << "Origin: " << "(" << origin_.x << ", "
   << origin_.y << ", "<< origin_.z << ") \n"
   << "Direction: " << "(" << direction_.x
