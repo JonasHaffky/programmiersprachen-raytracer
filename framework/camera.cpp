@@ -52,16 +52,7 @@ Ray Camera::calc_eye_ray(int x, int y, int height, int width) const {
     return camRay.transformRay(transformedCam);
 }
 
-/* * Kameratansformation (Abbildungen):
-  - Urpsrung => e (eye)
-  - negative z-Achse => n
-  - y-Achse => up (falls n senkrecht auf n)
-  - u = n x up (u steht senkrecht auf n und up)
-  - v = u x n (sicherstellen, dass up senkrecht zu u und n) 
-  - u, v und n sind zu normieren (neue Achsen des Systems) 
-  - glm::cross(x, y) => Kreuzprodukt */
-
-  // rays are generated in the simple coordinate system and transformed by the matrix
+// rays are generated in the simple coordinate system and transformed by the matrix
   // to fit the new system
 glm::mat4 Camera::transformCam() const {
   glm::vec3 e = origin_;

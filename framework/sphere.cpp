@@ -66,11 +66,6 @@
     rad_ = rad;
   }
 
-  // bool Sphere::intersect(Ray const& ray, float& distance) const {
-  //   // ray.direction_ = glm::normalize(ray.direction_);
-  //   return glm::intersectRaySphere(ray.origin_, ray.direction_, ctr_, rad_ * rad_, distance);
-  // }
-
   OptiHit Sphere::intersect(Ray const& ray) const {
     float t = 0.0f;
     bool res = glm::intersectRaySphere(ray.origin_, ray.direction_,

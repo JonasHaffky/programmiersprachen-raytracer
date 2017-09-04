@@ -424,14 +424,6 @@ TEST_CASE("intersectRaySphere", "[aufgabe5.6]") {
 /* ------------------ Aufgabe 5.7 ------------------ */
 
 TEST_CASE("static and dynamic variables", "[aufgabe5.7]") {
-  /* Allgemein: 
-  STATISCH: zur Uebersetzungszeit festgelegt oder gebunden, kann zur Lauftzeit nicht
-  veraendert werden (Bsp: Java, C++). 
-  - Variablen werden mit Typ versehen, typabhängige Fehlererkennung, schnellere Ausfuehrung als dynamisch typisierte Sprachen
-  DYNAMISCH: nicht festgelegt bis zur Laufzeit des Programms. Erlaubt veraenderungen
-  waehrend des Programmablaufs (Bsp: Scheme, Javascript).
-  - Variablen sind nur Namen, Typen sind mit Weten verbunden, keine Deklarationen, deshalb groessere Flexibilitaet*/
-
   Color red(255, 0, 0); 
   Material mat("Eisen", {1.0f, 2.2f, 4.2f}, {3.3f, 4.4f, 5.5f}, {3.1f, 5.0f, 0.1f}, 3.2f);
   glm::vec3 position(0, 0, 0); 

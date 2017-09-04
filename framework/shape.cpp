@@ -14,7 +14,7 @@ mat_ {mat},
 worldTransform_ {},
 worldTransformInv_ {glm::inverse(worldTransform_)} {}
 
-  // Constructor added with 7.6 (Transformations)
+  // Constructor with Transformations
 Shape::Shape(std::string const& name, Material const& mat, Matrix const& worldTransform) : 
 name_ {name},
 mat_ {mat},
