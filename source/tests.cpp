@@ -415,7 +415,6 @@ TEST_CASE("intersectRaySphere", "[aufgabe5.6]") {
 
   REQUIRE(dieter.hit_ == true);
   REQUIRE(dieter.distance_ == Approx(4.0f));
-  //REQUIRE(dieter.closest_shape_ == s2);
   REQUIRE(dieter.normalen_vec_ == tom);
   REQUIRE(dieter.surface_pt_ == tim);
 
@@ -479,72 +478,6 @@ TEST_CASE("Destructor: virtual vs. non-virtual", "[aufgabe5.8]") {
      virtuelle Funktion vorhanden ist)
      http://stackoverflow.com/questions/461203/when-to-use-virtual-destructors */
 } 
-
-/* ------------------ Aufgabe 6.3 ------------------ */
-
-// TEST_CASE("Box: intersect checks whether or not a ray hits a box", "[aufgabe6.3]") {
-
-//   Ray r1 {};
-//   Ray r2 {{1.0f, 1.0f, 1.0f}, {1.0f, 2.0f, 3.0f}};
-//   Ray r3 {{2.3f, 4.2f, 6.9f}, {6.9f, 4.2f, 2.3f}};
-//   Ray r4 {{0.0f, 0.0f, 0.0f}, {3.0f, 3.0f, 3.0f}};
-
-//   Box boss {"He da Boss", {"Lebkuchen", {1.0f, 2.2f, 4.2f}, {3.3f, 4.4f, 5.5f}, {3.1f, 5.0f, 0.1f}, 3.2f}, {0.0f, 0.0f, 0.0f}, {3.0f, 3.0f, 3.0f}};
-//   float distance = 0.0f;
-  
-//   REQUIRE(boss.intersect(r1) == false);
-//   REQUIRE(distance == 0.0f);
-
-//   REQUIRE(boss.intersect(r2) == true);
-//   REQUIRE(distance == Approx(1.24722f));
-//   distance = 0.0f;
-
-//   REQUIRE(boss.intersect(r3) == false);
-//   REQUIRE(distance == 0.0f);
-
-//   REQUIRE(boss.intersect(r4) == true);
-//   REQUIRE(distance == 0.0f);
-
-//   Ray r5 {{-1.0f, -1.0f, -1.0f}, {1.0f, 2.0f, 3.0f}};
-//   Ray r6 {{-6.0f, -7.0f, -8.0f}, {-6.9f, -4.2f, -2.3f}};
-//   Ray r7 {{-7.0f, -5.0f, -7.0f}, {10.0f, 11.0f, 12.0f}};
-
-//   Box billy {"Strangest Boy in Town", {"Nutellaglas", {1.0f, 2.2f, 4.2f}, {3.3f, 4.4f, 5.5f}, {3.1f, 5.0f, 0.1f}, 3.2f}, {-3.0f, -5.5f, -1.2f}, {5.2f, 4.6f, 6.9f}};
-
-//   REQUIRE(billy.intersect(r1) == false);
-//   REQUIRE(distance == 0.0f);
-
-//   REQUIRE(billy.intersect(r5) == true);
-//   REQUIRE(distance == Approx(0.24944f));
-//   distance = 0.0f;
-
-//   REQUIRE(billy.intersect(r6) == false);
-//   REQUIRE(distance == 0.0f);
-
-//   REQUIRE(billy.intersect(r7) == true);
-//   REQUIRE(distance == 9.23407f);
-//   distance = 0.0f;
-
-//   Ray r8 {{-9.2f, -11.0f, -12.2f}, {9.0f, 4.0f, 6.0f}};
-//   Ray r9 {{-7.3f, -6.8f, -8.4f}, {-6.8f, -4.4f, -2.7f}};
-//   Ray r10 {{-10.0f, -15.0f, -16.2f}, {10.6f, 12.5f, 9.3f}};
-
-//   Box butch {"Don't mess with Her", {"Titan", {1.0f, 2.2f, 4.2f}, {3.3f, 4.4f, 5.5f}, {3.1f, 5.0f, 0.1f}, 3.2f}, {-9.0f, -10.5f, -11.2f}, {-1.2f, -2.6f, -1.9f}};
-
-//   REQUIRE(butch.intersect(r1) == false);
-//   REQUIRE(distance == 0.0f);
-
-//   REQUIRE(butch.intersect(r8) == true);
-//   REQUIRE(distance == Approx(1.92209f));
-//   distance = 0.0f;
-
-//   REQUIRE(butch.intersect(r9) == true);
-//   REQUIRE(distance == Approx(2.13439f));
-
-//   REQUIRE(butch.intersect(r10) == true);
-//   REQUIRE(distance == Approx(10.13125f));
-
-// } 
 
 TEST_CASE("Box intersect","[aufgabe 6.3]"){
   Material mat1{"Plüsch", {0.22f,0.33f,0.44f},
@@ -613,9 +546,8 @@ TEST_CASE("Box intersect","[aufgabe 6.3]"){
 
 }
 
-/* ------------------ Aufgabe 7.1 ------------------ */
 
-TEST_CASE("Camera: prints camera (every member)", "[aufgabe7.1]") {
+TEST_CASE("Camera: prints camera (every member)", "[aufgabe7.3]") {
 
   Camera camera {};
   camera.print(std::cout);
@@ -625,7 +557,7 @@ TEST_CASE("Camera: prints camera (every member)", "[aufgabe7.1]") {
 
 }
 
-TEST_CASE("LightSource: prints light (every member)", "[aufgabe7.1]") {
+TEST_CASE("LightSource: prints light (every member)", "[aufgabe7.4]") {
 
   LightSource light {};
   light.print(std::cout);
@@ -634,8 +566,6 @@ TEST_CASE("LightSource: prints light (every member)", "[aufgabe7.1]") {
   lucifer.print(std::cout);
 
 }
-
-/* ------------------ Aufgabe 7.2 ------------------ */
 
 TEST_CASE("Composite: Adding and removing shapes out of the composite", "[aufgabe7.2]") {
   typedef std::shared_ptr<Shape> shape_ptr;
@@ -789,9 +719,7 @@ TEST_CASE("Composite: intersect() checks which hit point is nearest to the ray o
 
 }
 
-/* ------------------ Aufgabe 7.6 ------------------ */
-
-TEST_CASE("Shape: set worldTransformInv_", "[aufgabe7.6]") {
+TEST_CASE("Shape: set worldTransformInv_", "[aufgabe7.5]") {
 
 	// /!\ glm::mat4 [column][line], [Spalte][Zeile]
 
@@ -863,7 +791,7 @@ TEST_CASE("Shape: set worldTransformInv_", "[aufgabe7.6]") {
 
 }
 
-TEST_CASE("Shape: Translation", "[aufgabe7.6]") {
+TEST_CASE("Shape: Translation", "[aufgabe7.5]") {
 
 		// test lambda uses glm::translate()
 	auto translateLambda = [](glm::vec3 const& v, std::shared_ptr<Shape> const& s) {
@@ -916,7 +844,7 @@ TEST_CASE("Shape: Translation", "[aufgabe7.6]") {
 	REQUIRE(b1 -> world_transformation()[3].z == b2 -> world_transformation()[3].z);
 }
 
-TEST_CASE("Shape: Scaling", "[aufgabe7.6]") {
+TEST_CASE("Shape: Scaling", "[aufgabe7.5]") {
 
 		// test lambda uses glm::scale()
 	auto scaleLambda = [](glm::vec3 const& v, std::shared_ptr<Shape> const& s) {
@@ -970,7 +898,7 @@ TEST_CASE("Shape: Scaling", "[aufgabe7.6]") {
 	REQUIRE(b1 -> world_transformation()[3].z == b2 -> world_transformation()[3].z);
 } 
 
-TEST_CASE("Shape: RotationX", "[aufgabe7.6]") {
+TEST_CASE("Shape: RotationX", "[aufgabe7.5]") {
 	
 		// test lambda uses glm::rotate()
 	auto rotateLambda = [](glm::vec3 const& v, float phi, std::shared_ptr<Shape> const& s) {
@@ -1024,7 +952,7 @@ TEST_CASE("Shape: RotationX", "[aufgabe7.6]") {
 
 }
 
-TEST_CASE("Shape: RotationY", "[aufgabe7.6]") {
+TEST_CASE("Shape: RotationY", "[aufgabe7.5]") {
 	
 		// test lambda uses glm::rotate()
 	auto rotateLambda = [](glm::vec3 const& v, float phi, std::shared_ptr<Shape> const& s) {
@@ -1078,7 +1006,7 @@ TEST_CASE("Shape: RotationY", "[aufgabe7.6]") {
 
 }
 
-TEST_CASE("Shape: RotationZ", "[aufgabe7.6]") {
+TEST_CASE("Shape: RotationZ", "[aufgabe7.5]") {
 	
 		// test lambda uses glm::rotate()
 	auto rotateLambda = [](glm::vec3 const& v, float phi, std::shared_ptr<Shape> const& s) {
