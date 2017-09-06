@@ -44,7 +44,7 @@ public:
 protected:
   std::string name_;
   Material mat_;
-    // added with exercise 7.6 (Transformations)
+    // added with exercise 7.5 (Transformations)
   Matrix worldTransform_;
   Matrix worldTransformInv_;
 };
